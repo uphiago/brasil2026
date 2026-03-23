@@ -8,7 +8,7 @@ export default function History() {
   const { history } = selecao
 
   return (
-    <section>
+    <section id="historia">
       <p className="section-label">{h.label}</p>
       <h2 className="section-title">{h.title} <span>{h.titleSpan}</span></h2>
       <p className="section-desc">{h.desc}</p>
@@ -35,6 +35,12 @@ export default function History() {
                 <span className="history-final-label mono">{h.final}</span>
                 <span className="history-final-val">
                   {lang === 'pt-BR' ? entry.finalPt : entry.finalEn}
+                </span>
+              </div>
+              <div className="history-hero">
+                <span className="history-hero-label mono">{h.hero}</span>
+                <span className="history-hero-val">
+                  {lang === 'pt-BR' ? entry.heroPt : entry.heroEn}
                 </span>
               </div>
             </div>

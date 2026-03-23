@@ -8,6 +8,12 @@
   justify-content: center;
   z-index: 1000;
   padding: 20px;
+  animation: modalOverlayIn 0.18s ease;
+}
+
+@keyframes modalOverlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .modal-content {
@@ -17,6 +23,12 @@
   max-height: 90vh;
   overflow-y: auto;
   padding: 0;
+  animation: modalContentIn 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalContentIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
 }
 
 .modal-close {
@@ -47,57 +59,40 @@
 .modal-image-wrap {
   position: relative;
   width: 100%;
-  height: 380px;
-  background: linear-gradient(180deg, rgba(255,223,0,0.2) 0%, rgba(0,156,59,0.1) 50%, transparent 100%);
+  height: 300px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 20px;
+  align-items: flex-end;
+  justify-content: center;
+  background: linear-gradient(180deg,
+    rgba(255,223,0,0.14) 0%,
+    rgba(0,156,59,0.07) 55%,
+    rgba(0,0,0,0) 100%
+  );
 }
 
 .modal-image {
+  /* fills the 300px container, crops from top (shows face/head) */
   width: 100%;
-  max-width: 340px;
-  height: auto;
-  max-height: 340px;
-  object-fit: contain;
-  object-position: bottom center;
-  border-radius: 16px;
+  max-width: 320px;
+  height: 300px;
+  object-fit: cover;
+  object-position: 50% 5%;
 }
 
 .modal-number {
-  position: relative;
+  position: absolute;
+  bottom: 10px;
+  right: 18px;
   font-size: 64px;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.06);
   line-height: 1;
-  margin-top: -10px;
+  pointer-events: none;
 }
 
 .modal-info {
-  padding: 28px;
-}
-
-.modal-pos {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 6px;
-  border: 1px solid currentColor;
-  margin-bottom: 10px;
-}
-
-.modal-name {
-  font-size: 32px;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 24px 0;
-  line-height: 1.1;
+  padding: 24px 28px 28px;
 }
 
 .modal-pos {
@@ -112,10 +107,10 @@
   margin-bottom: 8px;
 }
 
-.modal-pos.grp-gk { color: #FFDF00; background: rgba(255,223,0,0.1); border-color: rgba(255,223,0,0.4); }
-.modal-pos.grp-def { color: #58a6ff; background: rgba(88,166,255,0.1); border-color: rgba(88,166,255,0.4); }
-.modal-pos.grp-mid { color: #009c3b; background: rgba(0,156,59,0.1); border-color: rgba(0,156,59,0.4); }
-.modal-pos.grp-fwd { color: #f85149; background: rgba(248,81,73,0.1); border-color: rgba(248,81,73,0.4); }
+.modal-pos.grp-gk  { color: #FFDF00; background: rgba(255,223,0,0.1);   border-color: rgba(255,223,0,0.4);   }
+.modal-pos.grp-def { color: #58a6ff; background: rgba(88,166,255,0.1);  border-color: rgba(88,166,255,0.4);  }
+.modal-pos.grp-mid { color: #009c3b; background: rgba(0,156,59,0.1);    border-color: rgba(0,156,59,0.4);    }
+.modal-pos.grp-fwd { color: #f85149; background: rgba(248,81,73,0.1);   border-color: rgba(248,81,73,0.4);   }
 
 .modal-name {
   font-size: 28px;
@@ -128,7 +123,7 @@
 .modal-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -141,13 +136,19 @@
   background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 4px;
 }
 
 .modal-stat-val {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 4px;
+}
+
+/* Club name can be long — smaller font */
+.modal-stat-club {
+  font-size: 13px;
+  line-height: 1.2;
 }
 
 .modal-stat-label {
@@ -159,15 +160,16 @@
 
 .modal-bio {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
   margin: 0;
 }
 
 @media (max-width: 480px) {
   .modal-content { max-width: 100%; }
-  .modal-image-wrap { height: 220px; }
+  .modal-image-wrap { height: 200px; }
   .modal-number { font-size: 48px; }
   .modal-name { font-size: 24px; }
-  .modal-stats { grid-template-columns: repeat(2, 1fr); }
+  .modal-stats { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .modal-info { padding: 18px 20px 24px; }
 }

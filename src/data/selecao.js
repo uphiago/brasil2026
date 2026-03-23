@@ -5,7 +5,7 @@ export const selecao = {
     nationalityEn: 'Italian',
     born: '10 Jun 1959',
     club: 'Seleção Brasileira',
-    since: '2024',
+    since: 'Out. 2024',
     formation: '4-2-3-1',
     titles: 26,
     titlesList: ['UCL (4x)', 'LaLiga (2x)', 'Serie A (3x)', 'Bundesliga', 'Ligue 1', 'Premier League', 'Copa del Rey (3x)', 'Supercopa (3x)', 'FA Cup', 'EFL Cup', 'Club World Cup (4x)', 'UEFA Super Cup (3x)'],
@@ -46,11 +46,36 @@ export const selecao = {
   ],
 
   history: [
-    { year: 1958, locationPt: 'Suécia',        locationEn: 'Sweden',       finalPt: 'Brasil 5–2 Suécia',          finalEn: 'Brazil 5–2 Sweden'          },
-    { year: 1962, locationPt: 'Chile',          locationEn: 'Chile',        finalPt: 'Brasil 3–1 Tchecoslov.',     finalEn: 'Brazil 3–1 Czechoslovakia'  },
-    { year: 1970, locationPt: 'México',         locationEn: 'Mexico',       finalPt: 'Brasil 4–1 Itália',          finalEn: 'Brazil 4–1 Italy'           },
-    { year: 1994, locationPt: 'Estados Unidos', locationEn: 'USA',          finalPt: 'Brasil 0–0 Itália (3–2 p.)', finalEn: 'Brazil 0–0 Italy (3–2 p.)' },
-    { year: 2002, locationPt: 'Coreia/Japão',   locationEn: 'Korea/Japan',  finalPt: 'Brasil 2–0 Alemanha',        finalEn: 'Brazil 2–0 Germany'         },
+    {
+      year: 1958,
+      locationPt: 'Suécia', locationEn: 'Sweden',
+      finalPt: 'Brasil 5–2 Suécia', finalEn: 'Brazil 5–2 Sweden',
+      heroPt: 'Pelé — 6 gols, com 17 anos', heroEn: 'Pelé — 6 goals, aged 17',
+    },
+    {
+      year: 1962,
+      locationPt: 'Chile', locationEn: 'Chile',
+      finalPt: 'Brasil 3–1 Tchecoslov.', finalEn: 'Brazil 3–1 Czechoslovakia',
+      heroPt: 'Garrincha — craque do torneio, 4 gols', heroEn: 'Garrincha — player of the tournament, 4 goals',
+    },
+    {
+      year: 1970,
+      locationPt: 'México', locationEn: 'Mexico',
+      finalPt: 'Brasil 4–1 Itália', finalEn: 'Brazil 4–1 Italy',
+      heroPt: 'Pelé — Bola de Ouro; Jairzinho marcou em todos os jogos', heroEn: 'Pelé — Golden Ball; Jairzinho scored in every match',
+    },
+    {
+      year: 1994,
+      locationPt: 'Estados Unidos', locationEn: 'USA',
+      finalPt: 'Brasil 0–0 Itália (3–2 p.)', finalEn: 'Brazil 0–0 Italy (3–2 p.)',
+      heroPt: 'Romário — 5 gols, Bola de Ouro', heroEn: 'Romário — 5 goals, Golden Ball',
+    },
+    {
+      year: 2002,
+      locationPt: 'Coreia/Japão', locationEn: 'Korea/Japan',
+      finalPt: 'Brasil 2–0 Alemanha', finalEn: 'Brazil 2–0 Germany',
+      heroPt: 'Ronaldo — 8 gols, artilheiro e Chuteira de Ouro', heroEn: 'Ronaldo — 8 goals, top scorer & Golden Boot',
+    },
   ],
 }
 

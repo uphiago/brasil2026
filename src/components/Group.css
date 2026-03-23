@@ -48,7 +48,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.45);
 }
 
 .group-tbl th.th-team { text-align: left; }
@@ -67,7 +67,12 @@
   color: rgba(255,255,255,0.45);
 }
 
-.td-team { text-align: left; }
+.td-team {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 .td-pts {
   font-weight: 700;
@@ -179,12 +184,6 @@
   color: rgba(255,255,255,0.2);
   letter-spacing: 0.1em;
   flex-shrink: 0;
-}
-
-@media (max-width: 900px) {
-  .group-wrap {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 600px) {

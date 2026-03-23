@@ -22,7 +22,7 @@ export default function Coach() {
   ]
 
   return (
-    <section>
+    <section id="tecnico">
       <p className="section-label">{c.label}</p>
       <h2 className="section-title">{c.title} <span>{c.titleSpan}</span></h2>
       <p className="section-desc">{c.desc}</p>

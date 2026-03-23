@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import './App.css'
 import { LanguageProvider } from './LanguageContext'
-import LanguageSwitcher from './components/LanguageSwitcher'
-import SiteNav from './components/SiteNav'
+import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Group from './components/Group'
 import Lineup from './components/Lineup'
@@ -32,8 +31,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <div className="app">
-        <SiteNav current="brasil2026" />
-        <LanguageSwitcher />
+        <NavBar />
         <Hero />
         <Group />
         <Lineup />

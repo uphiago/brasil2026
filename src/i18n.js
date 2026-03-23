@@ -51,7 +51,7 @@ export const translations = {
       since: 'No cargo desde',
       formation: 'Formação preferida',
       style: 'Estilo de jogo',
-      titles: 'Títulos como entrenador',
+      titles: 'Títulos como treinador',
       seasons: ' Temporadas',
       games: 'Jogos',
       winRate: 'Taxa de vitória',
@@ -63,6 +63,7 @@ export const translations = {
       desc: 'Cinco estrelas. Cinco conquistas. A história mais rica do futebol mundial.',
       final: 'Final',
       location: 'Sede',
+      hero: 'Destaque',
     },
     footer: {
       brand: 'Brasil na Copa',
@@ -135,6 +136,7 @@ export const translations = {
       desc: 'Five stars. Five World Cup victories. The richest history in world football.',
       final: 'Final',
       location: 'Host',
+      hero: 'Star',
     },
     footer: {
       brand: 'Brazil at the Cup',

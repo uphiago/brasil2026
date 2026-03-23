@@ -8,7 +8,7 @@ export default function Group() {
   const { group } = selecao
 
   return (
-    <section>
+    <section id="grupo">
       <p className="section-label">{g.label}</p>
       <h2 className="section-title">{g.title} <span>{g.titleSpan}</span></h2>
       <p className="section-desc">{g.desc}</p>

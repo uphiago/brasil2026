@@ -50,18 +50,26 @@
 .history-info {
   flex: 1;
   display: flex;
-  gap: 40px;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
 .history-location,
-.history-final {
+.history-final,
+.history-hero {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
+.history-hero {
+  flex: 1;
+  min-width: 160px;
+}
+
 .history-location-label,
-.history-final-label {
+.history-final-label,
+.history-hero-label {
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -81,6 +89,13 @@
   color: rgba(255,255,255,0.85);
 }
 
+.history-hero-val {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,223,0,0.7);
+  line-height: 1.4;
+}
+
 .history-num {
   font-size: 18px;
   color: rgba(255,223,0,0.6);
@@ -91,11 +106,13 @@
 
 @media (max-width: 900px) {
   .history-info { flex-direction: column; gap: 10px; }
+  .history-hero { min-width: unset; }
 }
 
 @media (max-width: 600px) {
   .history-item { padding: 16px 18px; gap: 14px; flex-wrap: wrap; }
   .history-year { font-size: 24px; min-width: 64px; }
-  .history-num { display: none; }
+  .history-num { font-size: 13px; letter-spacing: 1px; }
   .history-star { font-size: 28px; }
+  .history-hero-val { font-size: 12px; }
 }

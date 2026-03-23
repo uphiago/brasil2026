@@ -29,7 +29,7 @@ export default function Squad() {
   ]
 
   return (
-    <section>
+    <section id="elenco">
       <p className="section-label">{s.label}</p>
       <h2 className="section-title">{s.title} <span>{s.titleSpan}</span></h2>
       <p className="section-desc">{s.desc}</p>
@@ -56,7 +56,7 @@ export default function Squad() {
               onClick={() => setSelectedPlayer(p)}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setSelectedPlayer(p)}
+              onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setSelectedPlayer(p)}
             >
               {imgUrl && <img src={imgUrl} alt={p.name} className="squad-card-img" />}
               <div className="squad-card-top">

@@ -45,53 +45,66 @@
   gap: 8px;
   border-left: 3px solid transparent;
   cursor: pointer;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  /* no transform — section overflow:hidden would clip it */
+  transition: background 0.2s ease, border-color 0.2s ease;
   position: relative;
-  min-height: 140px;
+  min-height: 148px;
+  overflow: hidden;         /* clip image to card */
+  isolation: isolate;       /* contain z-index stacking */
 }
 
+/* ── player image: full card height, right side ── */
 .squad-card-img {
   position: absolute;
-  bottom: 50px;
-  right: 12px;
-  width: 55px;
-  height: 55px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 90px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 6px;
-  opacity: 0.4;
-  transition: opacity 0.25s ease;
+  object-position: 50% 5%;   /* show face / upper body */
+  border-radius: 0 14px 14px 0;
+  opacity: 0.22;
+  transition: opacity 0.2s ease;
   z-index: 0;
+  /* fade left edge into card */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.9) 100%);
+  mask-image:         linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.9) 100%);
 }
 
-.squad-card:hover .squad-card-img {
-  opacity: 0.7;
-}
+/* hover: brighten image + background; NO movement */
+.squad-card:hover .squad-card-img { opacity: 0.42; }
+.squad-card:hover { background: rgba(255,255,255,0.055); }
 
-.squad-card:hover {
-  transform: translateY(-2px);
-  border-left-width: 5px;
-}
+/* restore colored left border on hover (overrides glass-card:hover border-color) */
+.grp-gk.squad-card:hover  { border-left-color: #FFDF00; }
+.grp-def.squad-card:hover { border-left-color: #58a6ff; }
+.grp-mid.squad-card:hover { border-left-color: rgba(0,200,80,0.9); }
+.grp-fwd.squad-card:hover { border-left-color: #f85149; }
 
 .squad-card:focus {
   outline: 2px solid rgba(255, 223, 0, 0.5);
   outline-offset: 2px;
 }
 
-.grp-gk.squad-card  { border-left-color: rgba(255,223,0,0.6); }
-.grp-def.squad-card { border-left-color: rgba(88,166,255,0.6); }
-.grp-mid.squad-card { border-left-color: rgba(0,156,59,0.6); }
-.grp-fwd.squad-card { border-left-color: rgba(248,81,73,0.6); }
+.grp-gk.squad-card  { border-left-color: rgba(255,223,0,0.55); }
+.grp-def.squad-card { border-left-color: rgba(88,166,255,0.55); }
+.grp-mid.squad-card { border-left-color: rgba(0,156,59,0.55); }
+.grp-fwd.squad-card { border-left-color: rgba(248,81,73,0.55); }
 
+/* ── text layers above image ── */
 .squad-card-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
 .squad-number {
   font-size: 22px;
   font-weight: 700;
-  color: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.13);
   line-height: 1;
 }
 
@@ -116,6 +129,8 @@
   color: rgba(255,255,255,0.9);
   line-height: 1.2;
   margin-top: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .squad-bottom {
@@ -124,6 +139,8 @@
   align-items: center;
   padding-top: 8px;
   border-top: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  z-index: 1;
 }
 
 .squad-club {
@@ -132,7 +149,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 70%;
+  max-width: 68%;
 }
 
 .squad-age {
@@ -143,6 +160,7 @@
 
 @media (max-width: 600px) {
   .squad-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
-  .squad-card { padding: 14px 16px; min-height: 120px; }
+  .squad-card { padding: 14px 16px; min-height: 128px; }
+  .squad-card-img { width: 70px; }
   .squad-name { font-size: 14px; }
 }

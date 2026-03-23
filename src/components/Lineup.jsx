@@ -10,7 +10,7 @@ export default function Lineup() {
   const { lineup } = selecao
 
   return (
-    <section>
+    <section id="escalacao">
       <p className="section-label">{l.label}</p>
       <h2 className="section-title">{l.title} <span>{l.titleSpan}</span></h2>
       <p className="section-desc">{l.desc}</p>
