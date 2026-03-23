@@ -2,3 +2,8 @@ node_modules
 dist
 .DS_Store
 *.local
+*.Zone.Identifier
+
+# local image staging folders (not served by Vite)
+jogadores/
+jogadores-quadrado/

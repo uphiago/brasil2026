@@ -98,6 +98,7 @@ export const selecao = {
 }
 
 const playerImages = {
+  1: 'alisson.jpg',
   3: 'ederson_moraes.jpg',
   4: 'marquinhos.jpg',
   5: 'bremer.jpg',
