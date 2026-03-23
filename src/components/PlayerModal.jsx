@@ -14,12 +14,14 @@ export default function PlayerModal({ player, onClose }) {
         <button className="modal-close" onClick={onClose}>×</button>
         
         <div className="modal-image-wrap">
-          <img 
-            src={player.image} 
-            alt={player.name}
-            className="modal-image"
-            onError={(e) => { e.target.style.display = 'none' }}
-          />
+          {player.image && (
+            <img 
+              src={player.image} 
+              alt={player.name}
+              className="modal-image"
+              onError={(e) => { e.target.style.display = 'none' }}
+            />
+          )}
           <div className="modal-number pixel">#{player.number}</div>
         </div>
 

@@ -55,7 +55,6 @@ export const squad = [
   // ── Goleiros ──
   {
     id: 1, number: 1, name: 'Alisson', pos: 'GK', club: 'Liverpool', age: 32,
-    image: 'https://cdn.sportstalk.com.br/2025/03/25171545/alisson-brasil-2024.jpg',
     caps: 85, brazilGoals: 0, height: '191cm',
     bioPt: 'Capitão dos goleiros e um dos melhores do mundo. Campeão da Premier League e UCL pelo Liverpool, é o guardião titular da Seleção há quase uma década. Renomado pelos reflexos, saídas de bola e liderança no vestiário.',
     bioEn: 'Captain of the goalkeepers and one of the best in the world. Premier League and UCL winner with Liverpool, he has been the starting goalkeeper for almost a decade. Renowned for his reflexes, distribution and locker room leadership.',

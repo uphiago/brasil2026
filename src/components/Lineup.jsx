@@ -4,9 +4,9 @@ import './Lineup.css'
 
 const roleColor = { gk: '#FFDF00', def: '#58a6ff', dm: '#009c3b', am: '#bc8cff', fwd: '#f85149' }
 
-const getPlayerImage = (id) => {
+const getPlayerData = (id) => {
   const p = squad.find(s => s.id === id)
-  return p?.image || null
+  return p || null
 }
 
 export default function Lineup() {
@@ -34,18 +34,14 @@ export default function Lineup() {
             {lineup.map((row, ri) => (
               <div key={ri} className={`pitch-row row-${row.role}`}>
                 {row.players.map((p, pi) => {
-                  const imgUrl = getPlayerImage(p.id)
+                  const playerData = getPlayerData(p.id)
                   return (
                     <div key={pi} className="pitch-player">
                       <div
                         className="pitch-player-circle"
                         style={{ borderColor: roleColor[row.role], boxShadow: `0 0 12px ${roleColor[row.role]}33` }}
                       >
-                        {imgUrl ? (
-                          <img src={imgUrl} alt={p.name} className="pitch-player-img" />
-                        ) : (
-                          <span className="pitch-player-num" style={{ color: roleColor[row.role] }}>{p.number}</span>
-                        )}
+                        <span className="pitch-player-num" style={{ color: roleColor[row.role] }}>{p.number}</span>
                       </div>
                       <span className="pitch-player-name">{p.name}</span>
                       <span className="pitch-player-club mono">{p.club}</span>
