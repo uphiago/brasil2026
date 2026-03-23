@@ -33,15 +33,19 @@ export default function PlayerModal({ player, onClose }) {
         {/* side-by-side header */}
         <div className="modal-header">
           <div className={`modal-image-wrap grp-${pg}`}>
-            {imgSrc ? (
+            {/* fallback: always rendered, hidden by image on top */}
+            <div className="modal-image-fallback" aria-hidden="true">
+              <span className="modal-image-initials pixel">
+                {player.name.split(' ').slice(0, 2).map(w => w[0]).join('')}
+              </span>
+            </div>
+            {imgSrc && (
               <img
                 src={imgSrc}
                 alt={player.name}
                 className="modal-image"
                 onError={e => { e.target.style.display = 'none' }}
               />
-            ) : (
-              <div className="modal-image-placeholder" />
             )}
             <span className="modal-number pixel">#{player.number}</span>
           </div>

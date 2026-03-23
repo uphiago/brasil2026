@@ -13,7 +13,7 @@ export default function History() {
       <h2 className="section-title">{h.title} <span>{h.titleSpan}</span></h2>
       <p className="section-desc">{h.desc}</p>
 
-      <div className="history-stars">
+      <div className="history-stars" aria-hidden="true">
         {'★'.repeat(5).split('').map((_, i) => (
           <span key={i} className="history-star">★</span>
         ))}
@@ -44,7 +44,7 @@ export default function History() {
                 </span>
               </div>
             </div>
-            <div className="history-num pixel">
+            <div className="history-num pixel" aria-hidden="true">
               {'★'.repeat(i + 1)}
             </div>
           </div>

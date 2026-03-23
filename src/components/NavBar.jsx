@@ -57,6 +57,7 @@ export default function NavBar() {
             onClick={() => setMenuOpen(o => !o)}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={menuOpen}
+            aria-controls="navbar-mobile-nav"
           >
             <span className="hline" />
             <span className="hline" />
@@ -66,7 +67,7 @@ export default function NavBar() {
       </div>
 
       {/* mobile dropdown */}
-      <nav className={`navbar-mobile${menuOpen ? ' open' : ''}`} aria-label="Mobile navigation">
+      <nav id="navbar-mobile-nav" className={`navbar-mobile${menuOpen ? ' open' : ''}`} aria-label="Mobile navigation">
         {links.map(l => (
           <a key={l.href} href={l.href} className="navbar-mobile-link mono" onClick={closeMenu}>
             {l.label}
