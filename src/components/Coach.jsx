@@ -14,6 +14,13 @@ export default function Coach() {
     { label: c.formation,   val: coach.formation, highlight: true },
   ]
 
+  const stats = [
+    { label: c.titles, val: coach.titles },
+    { label: c.seasons, val: coach.seasons },
+    { label: c.games, val: coach.games },
+    { label: c.winRate, val: coach.winRate, highlight: true },
+  ]
+
   return (
     <section>
       <p className="section-label">{c.label}</p>
@@ -42,6 +49,16 @@ export default function Coach() {
           ))}
         </div>
 
+        {/* stats */}
+        <div className="coach-stats-grid">
+          {stats.map((s, i) => (
+            <div key={i} className="coach-stat-item glass-card">
+              <span className="coach-stat-val">{s.val}</span>
+              <span className="coach-stat-label mono">{s.label}</span>
+            </div>
+          ))}
+        </div>
+
         {/* style */}
         <div className="coach-style glass-card">
           <p className="coach-style-label mono">{c.style}</p>
@@ -54,7 +71,7 @@ export default function Coach() {
         <div className="coach-titles glass-card">
           <p className="coach-titles-label mono">{c.titles}</p>
           <p className="coach-titles-text mono">
-            {lang === 'pt-BR' ? coach.titlesPt : coach.titlesEn}
+            {coach.titlesList.join(' · ')}
           </p>
         </div>
       </div>

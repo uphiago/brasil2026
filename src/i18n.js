@@ -51,7 +51,10 @@ export const translations = {
       since: 'No cargo desde',
       formation: 'Formação preferida',
       style: 'Estilo de jogo',
-      titles: 'Títulos como treinador',
+      titles: 'Títulos como entrenador',
+      seasons: ' Temporadas',
+      games: 'Jogos',
+      winRate: 'Taxa de vitória',
     },
     history: {
       label: 'maior campeão do mundo',
@@ -121,6 +124,9 @@ export const translations = {
       formation: 'Preferred formation',
       style: 'Playing style',
       titles: 'Titles as manager',
+      seasons: 'Seasons',
+      games: 'Matches',
+      winRate: 'Win rate',
     },
     history: {
       label: 'most successful nation',

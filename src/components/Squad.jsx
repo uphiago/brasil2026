@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useLang } from '../LanguageContext'
-import { squad } from '../data/selecao'
+import { squad, getPlayerImage } from '../data/selecao'
 import PlayerModal from './PlayerModal'
 import './Squad.css'
 
@@ -47,28 +47,32 @@ export default function Squad() {
       </div>
 
       <div className="squad-grid">
-        {sorted.map(p => (
-          <div 
-            key={p.id} 
-            className={`squad-card glass-card grp-${posGroup(p.pos)}`}
-            onClick={() => setSelectedPlayer(p)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => e.key === 'Enter' && setSelectedPlayer(p)}
-          >
-            <div className="squad-card-top">
-              <span className="squad-number pixel">#{p.number}</span>
-              <span className={`squad-pos mono grp-${posGroup(p.pos)}`}>
-                {s.posNames[p.pos] || p.pos}
-              </span>
+        {sorted.map(p => {
+          const imgUrl = getPlayerImage(p.id)
+          return (
+            <div 
+              key={p.id} 
+              className={`squad-card glass-card grp-${posGroup(p.pos)}`}
+              onClick={() => setSelectedPlayer(p)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && setSelectedPlayer(p)}
+            >
+              {imgUrl && <img src={imgUrl} alt={p.name} className="squad-card-img" />}
+              <div className="squad-card-top">
+                <span className="squad-number pixel">#{p.number}</span>
+                <span className={`squad-pos mono grp-${posGroup(p.pos)}`}>
+                  {s.posNames[p.pos] || p.pos}
+                </span>
+              </div>
+              <p className="squad-name">{p.name}</p>
+              <div className="squad-bottom">
+                <span className="squad-club mono">{p.club}</span>
+                <span className="squad-age mono">{p.age} {s.age}</span>
+              </div>
             </div>
-            <p className="squad-name">{p.name}</p>
-            <div className="squad-bottom">
-              <span className="squad-club mono">{p.club}</span>
-              <span className="squad-age mono">{p.age} {s.age}</span>
-            </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       {selectedPlayer && (
