@@ -65,7 +65,7 @@ export const translations = {
       location: 'Sede',
     },
     footer: {
-      brand: 'brasafut',
+      brand: 'Brasil na Copa',
       tagline: 'Copa do Mundo 2026',
       github: 'GitHub',
       stats: 'Stats',
@@ -137,7 +137,7 @@ export const translations = {
       location: 'Host',
     },
     footer: {
-      brand: 'brasafut',
+      brand: 'Brazil at the Cup',
       tagline: 'World Cup 2026',
       github: 'GitHub',
       stats: 'Stats',

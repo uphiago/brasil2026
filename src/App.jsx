@@ -32,7 +32,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <div className="app">
-        <SiteNav current="brasafut" />
+        <SiteNav current="brasil2026" />
         <LanguageSwitcher />
         <Hero />
         <Group />

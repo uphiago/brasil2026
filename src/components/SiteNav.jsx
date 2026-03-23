@@ -4,7 +4,7 @@ import './SiteNav.css'
 const SITES = [
   { id: 'shellcraft',  label: 'shellcraft',  desc: 'terminal ecosystem', url: 'https://shellcraft.vercel.app/' },
   { id: 'distronomad', label: 'distronomad', desc: 'linux distro guide',  url: 'https://distronomad.vercel.app/' },
-  { id: 'brasafut',    label: 'brasafut',    desc: 'futebol amador',      url: 'https://brasafut.vercel.app/' },
+  { id: 'brasil2026',   label: 'Brasil 2026', desc: 'Seleção Brasileira', url: 'https://brasil2026.vercel.app/' },
 ]
 
 export default function SiteNav({ current }) {
