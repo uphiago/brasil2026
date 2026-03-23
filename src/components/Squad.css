@@ -33,8 +33,8 @@
 /* grid */
 .squad-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
 }
 
 /* card */
@@ -42,15 +42,17 @@
   padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  border-left: 2px solid transparent;
+  gap: 8px;
+  border-left: 3px solid transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  position: relative;
+  min-height: 140px;
 }
 
 .squad-card:hover {
-  transform: translateY(-4px);
-  border-left-width: 4px;
+  transform: translateY(-2px);
+  border-left-width: 5px;
 }
 
 .squad-card:focus {
@@ -58,10 +60,10 @@
   outline-offset: 2px;
 }
 
-.grp-gk.squad-card  { border-left-color: rgba(255,223,0,0.5); }
-.grp-def.squad-card { border-left-color: rgba(88,166,255,0.5); }
-.grp-mid.squad-card { border-left-color: rgba(0,156,59,0.5); }
-.grp-fwd.squad-card { border-left-color: rgba(248,81,73,0.5); }
+.grp-gk.squad-card  { border-left-color: rgba(255,223,0,0.6); }
+.grp-def.squad-card { border-left-color: rgba(88,166,255,0.6); }
+.grp-mid.squad-card { border-left-color: rgba(0,156,59,0.6); }
+.grp-fwd.squad-card { border-left-color: rgba(248,81,73,0.6); }
 
 .squad-card-top {
   display: flex;
@@ -70,9 +72,9 @@
 }
 
 .squad-number {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
-  color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.08);
   line-height: 1;
 }
 
@@ -92,10 +94,11 @@
 .grp-fwd.squad-pos { color: #f85149; background: rgba(248,81,73,0.08); border-color: rgba(248,81,73,0.3); }
 
 .squad-name {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: rgba(255,255,255,0.9);
   line-height: 1.2;
+  margin-top: auto;
 }
 
 .squad-bottom {
@@ -112,17 +115,17 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 70%;
 }
 
 .squad-age {
   font-size: 11px;
   color: rgba(255,255,255,0.2);
   flex-shrink: 0;
-  margin-left: 8px;
 }
 
 @media (max-width: 600px) {
-  .squad-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
-  .squad-card { padding: 14px 16px; }
+  .squad-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .squad-card { padding: 14px 16px; min-height: 120px; }
   .squad-name { font-size: 14px; }
 }

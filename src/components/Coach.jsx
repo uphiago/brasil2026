@@ -24,7 +24,7 @@ export default function Coach() {
         {/* avatar + name */}
         <div className="coach-identity glass-card">
           <div className="coach-avatar">
-            <span className="coach-avatar-icon">⚽</span>
+            <img src="/ancelotti.jpg" alt={coach.name} className="coach-avatar-img" />
           </div>
           <div>
             <p className="coach-role mono">{coach.club}</p>
