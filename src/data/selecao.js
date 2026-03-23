@@ -19,15 +19,33 @@ export const selecao = {
   group: {
     name: 'C',
     teams: [
-      { namePt: 'Brasil',   nameEn: 'Brazil',   flag: 'https://flagcdn.com/br.svg' },
-      { namePt: 'Marrocos', nameEn: 'Morocco',  flag: 'https://flagcdn.com/ma.svg' },
-      { namePt: 'Haiti',    nameEn: 'Haiti',    flag: 'https://flagcdn.com/ht.svg' },
-      { namePt: 'Escócia',  nameEn: 'Scotland', flag: 'https://flagcdn.com/gb-sct.svg' },
+      { namePt: 'Brasil',   nameEn: 'Brazil',   flag: 'https://flagcdn.com/br.svg',     ranking: 5,  isBrasil: true  },
+      { namePt: 'Marrocos', nameEn: 'Morocco',  flag: 'https://flagcdn.com/ma.svg',     ranking: 14, isBrasil: false },
+      { namePt: 'Haiti',    nameEn: 'Haiti',    flag: 'https://flagcdn.com/ht.svg',     ranking: 83, isBrasil: false },
+      { namePt: 'Escócia',  nameEn: 'Scotland', flag: 'https://flagcdn.com/gb-sct.svg', ranking: 38, isBrasil: false },
     ],
     matches: [
-      { date: '13 Jun', time: '18:00 ET', home: 'Brasil', homeEn: 'Brazil', homeFlag: 'https://flagcdn.com/br.svg', away: 'Marrocos', awayEn: 'Morocco', awayFlag: 'https://flagcdn.com/ma.svg', venuePt: 'New York / New Jersey', venueEn: 'New York / New Jersey' },
-      { date: '19 Jun', time: '21:00 ET', home: 'Brasil', homeEn: 'Brazil', homeFlag: 'https://flagcdn.com/br.svg', away: 'Haiti', awayEn: 'Haiti', awayFlag: 'https://flagcdn.com/ht.svg', venuePt: 'Filadélfia', venueEn: 'Philadelphia' },
-      { date: '24 Jun', time: '18:00 ET', home: 'Escócia', homeEn: 'Scotland', homeFlag: 'https://flagcdn.com/gb-sct.svg', away: 'Brasil', awayEn: 'Brazil', awayFlag: 'https://flagcdn.com/br.svg', venuePt: 'Miami Gardens', venueEn: 'Miami Gardens' },
+      {
+        date: '13 Jun', time: '18:00 ET', timeBRT: '19:00 BRT',
+        home: 'Brasil',  homeEn: 'Brazil',   homeFlag: 'https://flagcdn.com/br.svg',     homeIsBrasil: true,
+        away: 'Marrocos', awayEn: 'Morocco', awayFlag: 'https://flagcdn.com/ma.svg',     awayIsBrasil: false,
+        venuePt: 'New York / New Jersey', venueEn: 'New York / New Jersey',
+        stadiumPt: 'MetLife Stadium', stadiumEn: 'MetLife Stadium',
+      },
+      {
+        date: '19 Jun', time: '21:00 ET', timeBRT: '22:00 BRT',
+        home: 'Brasil', homeEn: 'Brazil',  homeFlag: 'https://flagcdn.com/br.svg',      homeIsBrasil: true,
+        away: 'Haiti',  awayEn: 'Haiti',   awayFlag: 'https://flagcdn.com/ht.svg',      awayIsBrasil: false,
+        venuePt: 'Filadélfia', venueEn: 'Philadelphia',
+        stadiumPt: 'Lincoln Financial Field', stadiumEn: 'Lincoln Financial Field',
+      },
+      {
+        date: '24 Jun', time: '18:00 ET', timeBRT: '19:00 BRT',
+        home: 'Escócia', homeEn: 'Scotland', homeFlag: 'https://flagcdn.com/gb-sct.svg', homeIsBrasil: false,
+        away: 'Brasil',  awayEn: 'Brazil',   awayFlag: 'https://flagcdn.com/br.svg',     awayIsBrasil: true,
+        venuePt: 'Miami Gardens', venueEn: 'Miami Gardens',
+        stadiumPt: 'Hard Rock Stadium', stadiumEn: 'Hard Rock Stadium',
+      },
     ],
   },
 

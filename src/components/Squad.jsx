@@ -61,11 +61,13 @@ export default function Squad() {
               {imgUrl && <img src={imgUrl} alt={p.name} className="squad-card-img" />}
               <div className="squad-card-top">
                 <span className="squad-number pixel">#{p.number}</span>
+              </div>
+              <div className="squad-identity">
+                <p className="squad-name">{p.name}</p>
                 <span className={`squad-pos mono grp-${posGroup(p.pos)}`}>
                   {s.posNames[p.pos] || p.pos}
                 </span>
               </div>
-              <p className="squad-name">{p.name}</p>
               <div className="squad-bottom">
                 <span className="squad-club mono">{p.club}</span>
                 <span className="squad-age mono">{p.age} {s.age}</span>
