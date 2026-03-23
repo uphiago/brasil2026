@@ -67,9 +67,9 @@ export default function Coach() {
           </p>
         </div>
 
-        {/* titles */}
+        {/* palmares */}
         <div className="coach-titles glass-card">
-          <p className="coach-titles-label mono">{c.titles}</p>
+          <p className="coach-titles-label mono">{c.palmares}</p>
           <p className="coach-titles-text mono">
             {coach.titlesList.join(' · ')}
           </p>

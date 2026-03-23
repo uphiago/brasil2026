@@ -20,7 +20,7 @@ section {
 
 section.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;   /* none, not translateY(0) — avoids creating a containing block */
   will-change: auto;
 }
 
