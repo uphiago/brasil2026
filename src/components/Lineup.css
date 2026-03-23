@@ -91,14 +91,15 @@
 }
 
 .pitch-player-circle {
-  width: 44px; height: 44px;
-  border-radius: 50%;
+  width: 48px; height: 48px;
+  border-radius: 6px;
   border: 2px solid;
   background: rgba(0,0,0,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(4px);
+  overflow: hidden;
 }
 
 .pitch-player-num {
@@ -109,9 +110,9 @@
 }
 
 .pitch-player-img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
   object-fit: cover;
 }
 

@@ -59,9 +59,12 @@
 .modal-image-wrap {
   position: relative;
   width: 100%;
-  height: 280px;
+  height: 320px;
   background: linear-gradient(180deg, rgba(255,223,0,0.15) 0%, transparent 100%);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-image {
