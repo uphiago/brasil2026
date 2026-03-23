@@ -64,7 +64,7 @@
   object-fit: cover;
   object-position: 50% 5%;   /* show face / upper body */
   border-radius: 0 14px 14px 0;
-  opacity: 0.22;
+  opacity: 0.45;
   transition: opacity 0.2s ease;
   z-index: 0;
   /* fade left edge into card */
@@ -73,7 +73,7 @@
 }
 
 /* hover: brighten image + background; NO movement */
-.squad-card:hover .squad-card-img { opacity: 0.42; }
+.squad-card:hover .squad-card-img { opacity: 0.65; }
 .squad-card:hover { background: rgba(255,255,255,0.055); }
 
 /* restore colored left border on hover (overrides glass-card:hover border-color) */
@@ -97,13 +97,20 @@
 .grp-def.squad-card.starter { border-left-color: rgba(88,166,255,0.95); }
 .grp-mid.squad-card.starter { border-left-color: rgba(0,200,80,0.95); }
 .grp-fwd.squad-card.starter { border-left-color: rgba(248,81,73,0.95); }
-.squad-card.starter .squad-card-img { opacity: 0.32; }
-.squad-card.starter .squad-number { color: rgba(255,255,255,0.25); }
+.squad-card.starter .squad-card-img { opacity: 0.55; }
+.squad-card.starter .squad-number { color: rgba(255,255,255,0.35); }
 
 /* ── text layers above image ── */
 .squad-card-top {
   position: relative;
   z-index: 1;
+}
+
+.squad-number {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  line-height: 1;
 }
 
 .squad-identity {
@@ -115,27 +122,6 @@
   z-index: 1;
 }
 
-.squad-number {
-  font-size: 22px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.13);
-  line-height: 1;
-}
-
-.squad-pos {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 3px 7px;
-  border-radius: 5px;
-  border: 1px solid currentColor;
-}
-
-.grp-gk.squad-pos  { color: #FFDF00; background: rgba(255,223,0,0.08); border-color: rgba(255,223,0,0.3); }
-.grp-def.squad-pos { color: #58a6ff; background: rgba(88,166,255,0.08); border-color: rgba(88,166,255,0.3); }
-.grp-mid.squad-pos { color: #009c3b; background: rgba(0,156,59,0.08); border-color: rgba(0,156,59,0.3); }
-.grp-fwd.squad-pos { color: #f85149; background: rgba(248,81,73,0.08); border-color: rgba(248,81,73,0.3); }
 
 .squad-name {
   font-size: 15px;
@@ -157,7 +143,7 @@
 
 .squad-club {
   font-size: 11px;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.55);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -166,7 +152,7 @@
 
 .squad-age {
   font-size: 11px;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.4);
   flex-shrink: 0;
 }
 

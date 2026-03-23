@@ -47,7 +47,6 @@ export default function PlayerModal({ player, onClose }) {
                 onError={e => { e.target.style.display = 'none' }}
               />
             )}
-            <span className="modal-number pixel" aria-hidden="true">#{player.number}</span>
           </div>
 
           <div className="modal-identity">

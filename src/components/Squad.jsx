@@ -64,9 +64,6 @@ export default function Squad() {
               </div>
               <div className="squad-identity">
                 <p className="squad-name">{p.name}</p>
-                <span className={`squad-pos mono grp-${posGroup(p.pos)}`}>
-                  {s.posNames[p.pos] || p.pos}
-                </span>
               </div>
               <div className="squad-bottom">
                 <span className="squad-club mono">{p.club}</span>
