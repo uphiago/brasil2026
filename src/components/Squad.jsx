@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useLang } from '../LanguageContext'
-import { squad, getPlayerImage } from '../data/selecao'
+import { squad, getPlayerImage, lineupPlayerIds } from '../data/selecao'
 import PlayerModal from './PlayerModal'
 import './Squad.css'
 
@@ -50,9 +50,9 @@ export default function Squad() {
         {sorted.map(p => {
           const imgUrl = getPlayerImage(p.id)
           return (
-            <div 
-              key={p.id} 
-              className={`squad-card glass-card grp-${posGroup(p.pos)}`}
+            <div
+              key={p.id}
+              className={`squad-card glass-card grp-${posGroup(p.pos)}${lineupPlayerIds.has(p.id) ? ' starter' : ''}`}
               onClick={() => setSelectedPlayer(p)}
               role="button"
               tabIndex={0}

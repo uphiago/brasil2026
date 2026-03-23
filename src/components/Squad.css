@@ -92,6 +92,14 @@
 .grp-mid.squad-card { border-left-color: rgba(0,156,59,0.55); }
 .grp-fwd.squad-card { border-left-color: rgba(248,81,73,0.55); }
 
+/* starter: brighter border + image */
+.grp-gk.squad-card.starter  { border-left-color: rgba(255,223,0,0.95); }
+.grp-def.squad-card.starter { border-left-color: rgba(88,166,255,0.95); }
+.grp-mid.squad-card.starter { border-left-color: rgba(0,200,80,0.95); }
+.grp-fwd.squad-card.starter { border-left-color: rgba(248,81,73,0.95); }
+.squad-card.starter .squad-card-img { opacity: 0.32; }
+.squad-card.starter .squad-number { color: rgba(255,255,255,0.25); }
+
 /* ── text layers above image ── */
 .squad-card-top {
   position: relative;

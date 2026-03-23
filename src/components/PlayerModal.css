@@ -138,6 +138,25 @@
   border-left: 1px solid rgba(255,255,255,0.06);
 }
 
+.modal-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.modal-starter-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 5px;
+  color: #FFDF00;
+  background: rgba(255,223,0,0.1);
+  border: 1px solid rgba(255,223,0,0.3);
+}
+
 .modal-pos {
   display: inline-block;
   align-self: flex-start;
@@ -209,10 +228,15 @@
   letter-spacing: 0.1em;
 }
 
+.modal-bio-wrap {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
 .modal-bio {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
   margin: 0;
 }
 

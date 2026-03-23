@@ -37,6 +37,7 @@ export const translations = {
       mid: 'Meias',
       fwd: 'Atacantes',
       age: 'anos',
+      starter: 'Titular',
       posNames: {
         GK: 'Goleiro',
         CB: 'Zagueiro', RB: 'Lateral Dir.', LB: 'Lateral Esq.',
@@ -115,6 +116,7 @@ export const translations = {
       mid: 'Midfielders',
       fwd: 'Forwards',
       age: 'yrs',
+      starter: 'Starter',
       posNames: {
         GK: 'Goalkeeper',
         CB: 'Centre-Back', RB: 'Right-Back', LB: 'Left-Back',
