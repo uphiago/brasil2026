@@ -4,6 +4,6 @@ dist
 *.local
 *.Zone.Identifier
 
-# local image staging folders (not served by Vite)
-jogadores/
-jogadores-quadrado/
+# local image staging folders at project root (not served by Vite)
+/jogadores/
+/jogadores-quadrado/
