@@ -31,7 +31,7 @@ export default function Group() {
               {group.teams.map((team, i) => (
                 <tr key={i} className={team.namePt === 'Brasil' ? 'row-brasil' : ''}>
                   <td className="td-team">
-                    <span className="team-flag">{team.flag}</span>
+                    <img className="team-flag-img" src={team.flag} alt="" />
                     <span className="team-name">{lang === 'pt-BR' ? team.namePt : team.nameEn}</span>
                   </td>
                   <td>—</td>
@@ -59,13 +59,13 @@ export default function Group() {
               </div>
               <div className="match-teams">
                 <div className={`match-team ${(lang === 'pt-BR' ? m.home : m.homeEn) === 'Brasil' || (lang === 'pt-BR' ? m.home : m.homeEn) === 'Brazil' ? 'brasil' : ''}`}>
-                  <span className="match-flag">{m.homeFlag}</span>
+                  <img className="match-flag-img" src={m.homeFlag} alt="" />
                   <span className="match-tname">{lang === 'pt-BR' ? m.home : m.homeEn}</span>
                 </div>
                 <span className="match-vs mono">{g.vs}</span>
                 <div className={`match-team right ${(lang === 'pt-BR' ? m.away : m.awayEn) === 'Brasil' || (lang === 'pt-BR' ? m.away : m.awayEn) === 'Brazil' ? 'brasil' : ''}`}>
                   <span className="match-tname">{lang === 'pt-BR' ? m.away : m.awayEn}</span>
-                  <span className="match-flag">{m.awayFlag}</span>
+                  <img className="match-flag-img" src={m.awayFlag} alt="" />
                 </div>
               </div>
             </div>

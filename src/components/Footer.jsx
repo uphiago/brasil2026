@@ -16,6 +16,20 @@ export default function Footer() {
 
       <div className="footer-right">
         <a
+          href="https://cloud.umami.is/share/4UdhxCbSLII8IGgd/brasil2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-stats"
+          aria-label="Stats"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 20V10"/>
+            <path d="M12 20V4"/>
+            <path d="M6 20v-6"/>
+          </svg>
+          {f.stats}
+        </a>
+        <a
           href="https://x.com/uphiago"
           target="_blank"
           rel="noopener noreferrer"
@@ -27,7 +41,7 @@ export default function Footer() {
           </svg>
         </a>
         <a
-          href="https://github.com/uphiago/brasafut"
+          href="https://github.com/uphiago/brasil2026"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-github"

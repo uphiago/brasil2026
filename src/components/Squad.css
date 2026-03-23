@@ -44,6 +44,18 @@
   flex-direction: column;
   gap: 10px;
   border-left: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.squad-card:hover {
+  transform: translateY(-4px);
+  border-left-width: 4px;
+}
+
+.squad-card:focus {
+  outline: 2px solid rgba(255, 223, 0, 0.5);
+  outline-offset: 2px;
 }
 
 .grp-gk.squad-card  { border-left-color: rgba(255,223,0,0.5); }

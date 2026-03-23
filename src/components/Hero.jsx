@@ -32,9 +32,13 @@ export default function Hero() {
         <p className="hero-sub">{h.sub}</p>
 
         <div className="hero-group-badge">
-          <span className="hero-group-flag">🇧🇷</span>
+          <img className="hero-group-flag-img" src="https://flagcdn.com/br.svg" alt="Brazil" />
           <span className="hero-group-label mono">{h.group}</span>
-          <span className="hero-group-flag">🇲🇦 🇭🇹 🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+          <div className="hero-group-flags">
+            <img src="https://flagcdn.com/ma.svg" alt="Morocco" />
+            <img src="https://flagcdn.com/ht.svg" alt="Haiti" />
+            <img src="https://flagcdn.com/gb-sct.svg" alt="Scotland" />
+          </div>
         </div>
       </div>
 

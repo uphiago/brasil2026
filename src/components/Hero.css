@@ -172,7 +172,24 @@
   backdrop-filter: blur(12px);
 }
 
-.hero-group-flag { font-size: 18px; letter-spacing: 2px; }
+.hero-group-flag-img {
+  width: 24px;
+  height: 16px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.hero-group-flags {
+  display: flex;
+  gap: 6px;
+}
+
+.hero-group-flags img {
+  width: 24px;
+  height: 16px;
+  object-fit: contain;
+  border-radius: 2px;
+}
 
 .hero-group-label {
   font-size: 11px;
@@ -215,8 +232,24 @@
   .hero-badge { font-size: 9px; letter-spacing: 0.18em; }
   .hero-tagline { font-size: 18px; }
   .hero-sub { font-size: 13px; }
-  .hero-group-badge { padding: 10px 16px; gap: 8px; flex-wrap: wrap; justify-content: center; }
-  .hero-group-flag { font-size: 15px; }
+  .hero-group-badge { 
+    padding: 10px 16px; 
+    gap: 8px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    min-width: 200px;
+  }
+  .hero-group-flag-img { width: 28px; height: 20px; }
+  .hero-group-flags img { width: 28px; height: 20px; }
   .hero-group-label { font-size: 10px; }
   .hero-scroll-hint { bottom: calc(env(safe-area-inset-bottom, 0px) + 28px); }
+}
+
+@media (max-width: 400px) {
+  .hero-group-badge {
+    padding: 12px 20px;
+    gap: 12px;
+  }
+  .hero-group-flag-img { width: 32px; height: 22px; }
+  .hero-group-flags img { width: 32px; height: 22px; }
 }

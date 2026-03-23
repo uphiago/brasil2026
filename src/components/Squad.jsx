@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '../LanguageContext'
 import { squad } from '../data/selecao'
+import PlayerModal from './PlayerModal'
 import './Squad.css'
 
 const posGroup = pos => {
@@ -14,6 +15,7 @@ export default function Squad() {
   const { t } = useLang()
   const s = t.squad
   const [filter, setFilter] = useState('all')
+  const [selectedPlayer, setSelectedPlayer] = useState(null)
 
   const filtered = filter === 'all' ? squad : squad.filter(p => posGroup(p.pos) === filter)
   const sorted = [...filtered].sort((a, b) => a.number - b.number)
@@ -46,7 +48,14 @@ export default function Squad() {
 
       <div className="squad-grid">
         {sorted.map(p => (
-          <div key={p.id} className={`squad-card glass-card grp-${posGroup(p.pos)}`}>
+          <div 
+            key={p.id} 
+            className={`squad-card glass-card grp-${posGroup(p.pos)}`}
+            onClick={() => setSelectedPlayer(p)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && setSelectedPlayer(p)}
+          >
             <div className="squad-card-top">
               <span className="squad-number pixel">#{p.number}</span>
               <span className={`squad-pos mono grp-${posGroup(p.pos)}`}>
@@ -61,6 +70,13 @@ export default function Squad() {
           </div>
         ))}
       </div>
+
+      {selectedPlayer && (
+        <PlayerModal 
+          player={selectedPlayer} 
+          onClose={() => setSelectedPlayer(null)} 
+        />
+      )}
     </section>
   )
 }
