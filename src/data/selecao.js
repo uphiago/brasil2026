@@ -97,6 +97,7 @@ export const selecao = {
   ],
 }
 
+// square images — used on squad cards
 const playerImages = {
   1: 'alisson.jpg',
   3: 'ederson_moraes.jpg',
@@ -106,6 +107,35 @@ const playerImages = {
   7: 'leo_pereira.jpg',
   8: 'roger_ibanez.png',
   9: 'alex-sandro.jpg',
+  10: 'wesley_franca.jpg',
+  11: 'danilo.jpg',
+  12: 'douglas_santos.jpg',
+  13: 'casemiro.jpg',
+  14: 'andrey_santos.jpg',
+  15: 'fabinho.jpg',
+  16: 'danilo_meia.jpg',
+  17: 'gabriel_sara.jpg',
+  18: 'vinijr.jpg',
+  19: 'raphinha.jpg',
+  20: 'endrick.jpg',
+  21: 'matheus_cunha.jpg',
+  22: 'gabriel_martinelli.jpg',
+  23: 'joao_pedro.jpg',
+  24: 'luiz_henrique.jpg',
+  25: 'igor_thiago.jpg',
+  26: 'rayan.jpg',
+}
+
+// larger images — used inside the player modal
+const modalImages = {
+  1: 'alisson.jpg',
+  3: 'ederson_moraes.jpg',
+  4: 'marquinhos.jpg',
+  5: 'bremer.jpg',
+  6: 'gabriel_magalhaes.jpg',
+  7: 'leo_pereira.jpg',
+  8: 'roger_ibanez.jpg',
+  9: 'alex_sandro.jpg',
   10: 'wesley_franca.jpg',
   11: 'danilo.jpg',
   12: 'douglas_santos.jpg',
@@ -303,7 +333,12 @@ export const squad = [
   },
 ]
 
+// square image for squad cards
 export const getPlayerImage = (id) => playerImages[id] ? `/jogadores/${playerImages[id]}` : null
+
+// larger image for the modal (falls back to square if not available)
+export const getPlayerModalImage = (id) =>
+  modalImages[id] ? `/jogadores-modal/${modalImages[id]}` : getPlayerImage(id)
 
 export const lineupPlayerIds = new Set(
   selecao.lineup.flatMap(row => row.players.map(p => p.id))

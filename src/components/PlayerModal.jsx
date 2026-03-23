@@ -1,5 +1,5 @@
 import { useLang } from '../LanguageContext'
-import { getPlayerImage, lineupPlayerIds } from '../data/selecao'
+import { getPlayerModalImage, lineupPlayerIds } from '../data/selecao'
 import './PlayerModal.css'
 
 const posGroup = pos => {
@@ -16,7 +16,7 @@ export default function PlayerModal({ player, onClose }) {
 
   const posName = s.posNames[player.pos] || player.pos
   const bio = isPt ? player.bioPt : player.bioEn
-  const imgSrc = getPlayerImage(player.id)
+  const imgSrc = getPlayerModalImage(player.id)
   const pg = posGroup(player.pos)
   const isStarter = lineupPlayerIds.has(player.id)
 
