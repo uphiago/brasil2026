@@ -118,8 +118,20 @@
 }
 
 /* ── light theme overrides ── */
+[data-theme="light"] .history-star {
+  color: #b8960a;
+  filter: drop-shadow(0 0 6px rgba(160,120,0,0.25));
+}
+[data-theme="light"] .history-item:hover {
+  border-color: rgba(0,100,40,0.18);
+  background: rgba(0,100,40,0.03);
+}
 [data-theme="light"] .history-year    { color: rgba(0,0,0,0.85); }
-[data-theme="light"] .history-num     { background: rgba(0,0,0,0.07); }
-[data-theme="light"] .history-label   { color: rgba(0,0,0,0.28); }
-[data-theme="light"] .history-hero-label { color: rgba(0,0,0,0.55); }
-[data-theme="light"] .history-hero-val   { color: rgba(0,0,0,0.82); }
+[data-theme="light"] .history-divider { background: rgba(0,0,0,0.1); }
+[data-theme="light"] .history-location-label,
+[data-theme="light"] .history-final-label,
+[data-theme="light"] .history-hero-label { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .history-location-val { color: rgba(0,0,0,0.62); }
+[data-theme="light"] .history-final-val    { color: rgba(0,0,0,0.82); }
+[data-theme="light"] .history-hero-val     { color: rgba(0,100,40,0.85); }
+[data-theme="light"] .history-num          { color: #b8960a; }

@@ -178,6 +178,18 @@
 .navbar-mobile-link:last-child { border-bottom: none; }
 .navbar-mobile-link:hover { color: var(--text); background: rgba(var(--rgb-text), 0.04); }
 
+/* ── light theme overrides ── */
+[data-theme="light"] .navbar-lang {
+  color: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.15);
+}
+[data-theme="light"] .navbar-lang:hover {
+  color: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.09);
+  border-color: rgba(0,0,0,0.28);
+}
+
 @media (max-width: 900px) {
   .navbar-inner { padding: 0 24px; }
   .navbar-links { display: none; }

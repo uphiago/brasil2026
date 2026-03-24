@@ -315,3 +315,10 @@
 [data-theme="light"] .group-name-badge  { color: rgba(0,110,45,0.75); }
 [data-theme="light"] .row-brasil .td-pts { color: #7a5e00; }
 [data-theme="light"] .match-date        { color: rgba(0,110,45,0.75); }
+[data-theme="light"] .match-time-brt     { color: rgba(0,0,0,0.28); }
+[data-theme="light"] .match-stadium      { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .row-brasil td      { background: rgba(0,100,40,0.04); }
+[data-theme="light"] .row-brasil .team-name { color: rgba(0,0,0,0.9); }
+[data-theme="light"] .history-item:hover { border-color: rgba(0,100,40,0.18); }
+[data-theme="light"] .group-tbl th:first-child,
+[data-theme="light"] .group-tbl td:first-child { border-bottom-color: rgba(0,0,0,0.06); }
