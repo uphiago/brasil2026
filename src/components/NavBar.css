@@ -5,10 +5,10 @@
   right: 0;
   z-index: 50;
   height: 52px;
-  background: rgba(0, 0, 0, 0.88);
+  background: rgba(var(--rgb-bg), 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(var(--rgb-text), 0.07);
 }
 
 .navbar-inner {
@@ -39,7 +39,7 @@
 .navbar-title {
   font-size: 12px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(var(--rgb-text), 0.6);
   letter-spacing: 0.05em;
   white-space: nowrap;
 }
@@ -56,7 +56,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(var(--rgb-text), 0.3);
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 6px;
@@ -64,8 +64,29 @@
 }
 
 .navbar-link:hover {
-  color: rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.05);
+  color: rgba(var(--rgb-text), 0.8);
+  background: rgba(var(--rgb-text), 0.05);
+}
+
+.navbar-theme {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--rgb-text), 0.15);
+  background: rgba(var(--rgb-text), 0.05);
+  color: rgba(var(--rgb-text), 0.55);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navbar-theme:hover {
+  background: rgba(var(--rgb-text), 0.1);
+  color: rgba(var(--rgb-text), 0.9);
 }
 
 .navbar-lang {
@@ -115,7 +136,7 @@
   display: block;
   width: 18px;
   height: 2px;
-  background: rgba(255,255,255,0.5);
+  background: rgba(var(--rgb-text), 0.5);
   border-radius: 2px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -130,8 +151,8 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.25s ease;
-  background: rgba(0,0,0,0.95);
-  border-top: 1px solid rgba(255,255,255,0.07);
+  background: rgba(var(--rgb-bg), 0.97);
+  border-top: 1px solid rgba(var(--rgb-text), 0.07);
 }
 
 .navbar-mobile.open {
@@ -145,14 +166,14 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(var(--rgb-text), 0.5);
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(var(--rgb-text), 0.05);
   transition: color 0.15s, background 0.15s;
 }
 
 .navbar-mobile-link:last-child { border-bottom: none; }
-.navbar-mobile-link:hover { color: #fff; background: rgba(255,255,255,0.04); }
+.navbar-mobile-link:hover { color: var(--text); background: rgba(var(--rgb-text), 0.04); }
 
 @media (max-width: 900px) {
   .navbar-inner { padding: 0 24px; }

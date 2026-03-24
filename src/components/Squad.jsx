@@ -16,6 +16,8 @@ export default function Squad() {
   const s = t.squad
   const [filter, setFilter] = useState('all')
   const [selectedPlayer, setSelectedPlayer] = useState(null)
+  const [loadedImages, setLoadedImages] = useState(new Set())
+  const markLoaded = id => setLoadedImages(prev => { const n = new Set(prev); n.add(id); return n })
 
   const filtered = filter === 'all' ? squad : squad.filter(p => posGroup(p.pos) === filter)
   const sorted = [...filtered].sort((a, b) => a.number - b.number)
@@ -47,18 +49,30 @@ export default function Squad() {
       </div>
 
       <div className="squad-grid">
-        {sorted.map(p => {
+        {sorted.map((p, index) => {
           const imgUrl = getPlayerImage(p.id)
+          const imgLoaded = loadedImages.has(p.id)
           return (
             <div
               key={p.id}
+              style={{ '--card-i': index }}
               className={`squad-card glass-card grp-${posGroup(p.pos)}${lineupPlayerIds.has(p.id) ? ' starter' : ''}`}
               onClick={() => setSelectedPlayer(p)}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setSelectedPlayer(p)}
             >
-              {imgUrl && <img src={imgUrl} alt={p.name} className="squad-card-img" />}
+              {imgUrl && !imgLoaded && <div className="squad-img-skeleton" />}
+              {imgUrl && (
+                <img
+                  src={imgUrl}
+                  alt={p.name}
+                  className={`squad-card-img${imgLoaded ? ' loaded' : ''}`}
+                  ref={el => { if (el?.complete && !imgLoaded) markLoaded(p.id) }}
+                  onLoad={() => markLoaded(p.id)}
+                  onError={() => markLoaded(p.id)}
+                />
+              )}
               <div className="squad-card-top">
                 <span className="squad-number pixel">#{p.number}</span>
               </div>

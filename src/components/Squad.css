@@ -37,20 +37,32 @@
   gap: 16px;
 }
 
+/* entrance animation */
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
 /* card */
 .squad-card {
-  padding: 18px 20px;
+  padding: 18px 100px 18px 20px;  /* right padding keeps text clear of image */
   display: flex;
   flex-direction: column;
   gap: 8px;
   border-left: 3px solid transparent;
   cursor: pointer;
-  /* no transform — section overflow:hidden would clip it */
   transition: background 0.2s ease, border-color 0.2s ease;
   position: relative;
   min-height: 148px;
-  overflow: hidden;         /* clip image to card */
-  isolation: isolate;       /* contain z-index stacking */
+  overflow: hidden;
+  isolation: isolate;
+  /* stagger entrance — held paused until section.visible */
+  animation: cardReveal 0.4s ease both paused;
+  animation-delay: calc(var(--card-i, 0) * 40ms + 80ms);
+}
+
+section.visible .squad-card {
+  animation-play-state: running;
 }
 
 /* ── player image: full card height, right side ── */
@@ -62,42 +74,51 @@
   width: 90px;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 5%;   /* show face / upper body */
+  object-position: 50% 5%;
   border-radius: 0 14px 14px 0;
-  opacity: 0.45;
-  transition: opacity 0.2s ease;
+  opacity: 0;                    /* hidden until loaded */
+  transition: opacity 0.35s ease;
   z-index: 0;
-  /* fade left edge into card */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.9) 100%);
   mask-image:         linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.9) 100%);
 }
 
-/* hover: brighten image + background; NO movement */
-.squad-card:hover .squad-card-img { opacity: 0.65; }
+.squad-card-img.loaded              { opacity: 0.45; }
+.squad-card.starter .squad-card-img.loaded  { opacity: 0.55; }
+.squad-card:hover   .squad-card-img.loaded  { opacity: 0.65; }
+
+/* hover background */
 .squad-card:hover { background: rgba(255,255,255,0.055); }
 
-/* restore colored left border on hover (overrides glass-card:hover border-color) */
-.grp-gk.squad-card:hover  { border-left-color: #FFDF00; }
-.grp-def.squad-card:hover { border-left-color: #58a6ff; }
-.grp-mid.squad-card:hover { border-left-color: rgba(0,200,80,0.9); }
-.grp-fwd.squad-card:hover { border-left-color: #f85149; }
+/* ── skeleton shimmer ── */
+@keyframes shimmer {
+  from { background-position: 200% center; }
+  to   { background-position: -200% center; }
+}
+
+.squad-img-skeleton {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 90px;
+  border-radius: 0 14px 14px 0;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.02) 0%,
+    rgba(255,255,255,0.07) 50%,
+    rgba(255,255,255,0.02) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease infinite;
+  z-index: 0;
+}
+
+.squad-card:hover { border-left-color: rgba(255,255,255,0.4); }
 
 .squad-card:focus {
   outline: 2px solid rgba(255, 223, 0, 0.5);
   outline-offset: 2px;
 }
 
-.grp-gk.squad-card  { border-left-color: rgba(255,223,0,0.55); }
-.grp-def.squad-card { border-left-color: rgba(88,166,255,0.55); }
-.grp-mid.squad-card { border-left-color: rgba(0,156,59,0.55); }
-.grp-fwd.squad-card { border-left-color: rgba(248,81,73,0.55); }
-
-/* starter: brighter border + image */
-.grp-gk.squad-card.starter  { border-left-color: rgba(255,223,0,0.95); }
-.grp-def.squad-card.starter { border-left-color: rgba(88,166,255,0.95); }
-.grp-mid.squad-card.starter { border-left-color: rgba(0,200,80,0.95); }
-.grp-fwd.squad-card.starter { border-left-color: rgba(248,81,73,0.95); }
-.squad-card.starter .squad-card-img { opacity: 0.55; }
+.squad-card         { border-left-color: rgba(255,255,255,0.12); }
+.squad-card.starter { border-left-color: rgba(255,255,255,0.55); }
 .squad-card.starter .squad-number { color: rgba(255,255,255,0.35); }
 
 /* ── text layers above image ── */
@@ -158,7 +179,35 @@
 
 @media (max-width: 600px) {
   .squad-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
-  .squad-card { padding: 14px 16px; min-height: 128px; }
+  .squad-card { padding: 14px 80px 14px 16px; min-height: 128px; }
   .squad-card-img { width: 70px; }
+  .squad-img-skeleton { width: 70px; }
   .squad-name { font-size: 14px; }
+}
+
+/* ── light theme overrides ── */
+[data-theme="light"] .squad-filter {
+  border-color: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.04);
+  color: rgba(0,0,0,0.45);
+}
+[data-theme="light"] .squad-filter:hover {
+  background: rgba(0,0,0,0.07);
+  color: rgba(0,0,0,0.75);
+}
+[data-theme="light"] .squad-card         { border-left-color: rgba(0,0,0,0.12); }
+[data-theme="light"] .squad-card.starter { border-left-color: rgba(0,0,0,0.45); }
+[data-theme="light"] .squad-card:hover   { border-left-color: rgba(0,0,0,0.35); background: rgba(0,0,0,0.04); }
+[data-theme="light"] .squad-number       { color: rgba(0,0,0,0.25); }
+[data-theme="light"] .squad-card.starter .squad-number { color: rgba(0,0,0,0.3); }
+[data-theme="light"] .squad-name         { color: rgba(0,0,0,0.85); }
+[data-theme="light"] .squad-club         { color: rgba(0,0,0,0.5); }
+[data-theme="light"] .squad-age          { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .squad-bottom       { border-top-color: rgba(0,0,0,0.06); }
+[data-theme="light"] .squad-img-skeleton {
+  background: linear-gradient(90deg,
+    rgba(0,0,0,0.03) 0%,
+    rgba(0,0,0,0.08) 50%,
+    rgba(0,0,0,0.03) 100%);
+  background-size: 200% 100%;
 }

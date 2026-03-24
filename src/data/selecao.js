@@ -7,6 +7,7 @@ export const selecao = {
     club: 'Seleção Brasileira',
     since: 'Out. 2024',
     formation: '4-2-3-1',
+    instagram: 'mrancelotti',
     titles: 26,
     titlesList: ['UCL (4x)', 'LaLiga (2x)', 'Serie A (3x)', 'Bundesliga', 'Ligue 1', 'Premier League', 'Copa del Rey (3x)', 'Supercopa (3x)', 'FA Cup', 'EFL Cup', 'Club World Cup (4x)', 'UEFA Super Cup (3x)'],
     seasons: 24,
@@ -332,6 +333,35 @@ export const squad = [
     bioEn: 'The youngest player in the March 2026 call-up, summoned following injuries to Estevão and Rodrygo. Former Vasco man, he joined Bournemouth for £25 million in February 2026 and has already impressed in the Premier League.',
   },
 ]
+
+// Extended static details — shown in the player modal
+export const playerDetails = {
+  1:  { born: 'Novo Hamburgo, RS', foot: 'R', market: '€30M', instagram: 'alissonbecker',      season: { games: 35, goals: 0, assists: 0, cleanSheets: 16 }, titles: ['UCL 2019', 'Premier League (3×)'] },
+  3:  { born: 'Osasco, SP',        foot: 'R', market: '€18M', instagram: 'ederson93',          season: { games: 28, goals: 0, assists: 0, cleanSheets: 11 }, titles: ['Premier League (6×)', 'UCL 2023'] },
+  4:  { born: 'São Paulo, SP',     foot: 'R', market: '€45M', instagram: 'marquinhosm5',       season: { games: 30, goals: 3, assists: 2 },                  titles: ['UCL 2025', 'Ligue 1 (11×)', 'Copa da França (5×)'] },
+  5:  { born: 'Itapitanga, BA',    foot: 'R', market: '€55M', instagram: 'bremer',             season: { games: 18, goals: 1, assists: 0 },                  titles: ['Coppa Italia 2024'] },
+  6:  { born: 'Ribeirão das Neves, MG', foot: 'R', market: '€75M', instagram: '_gabrielmagalhaes', season: { games: 34, goals: 5, assists: 2 },              titles: ['Ligue 1 2021'] },
+  7:  { born: 'São Paulo, SP',     foot: 'R', market: '€12M', instagram: 'leopereira4',        season: { games: 28, goals: 4, assists: 1 },                  titles: ['Copa Libertadores 2022', 'Brasileirão 2023'] },
+  8:  { born: 'Caxias do Sul, RS', foot: 'R', market: '€14M', instagram: 'ibanez41oficial',    season: { games: 25, goals: 1, assists: 0 },                  titles: ['AFC CL Elite 2025'] },
+  9:  { born: 'Catanduva, SP',     foot: 'L', market: '€6M',  instagram: 'alxsndro12',         season: { games: 22, goals: 1, assists: 3 },                  titles: ['Serie A (4×)', 'Coppa Italia (2×)'] },
+  10: { born: 'Formosa, GO',       foot: 'R', market: '€28M', instagram: 'wesleyfranca03_',    season: { games: 28, goals: 1, assists: 4 },                  titles: [] },
+  11: { born: 'Bicas, MG',         foot: 'R', market: '€8M',  instagram: 'danilo_35',          season: { games: 25, goals: 1, assists: 3 },                  titles: ['Copa Libertadores 2025', 'Premier League 2019'] },
+  12: { born: 'Santos, SP',        foot: 'L', market: '€5M',  instagram: 'douglassantos06',    season: { games: 24, goals: 0, assists: 2 },                  titles: ['Liga Russa (3×)'] },
+  13: { born: 'São José dos Campos, SP', foot: 'R', market: '€22M', instagram: 'casemiro',     season: { games: 28, goals: 3, assists: 1 },                  titles: ['UCL (3×)', 'La Liga (5×)', 'Copa del Rey (2×)'] },
+  14: { born: 'Rio de Janeiro, RJ', foot: 'R', market: '€35M', instagram: 'andreysantos_5',    season: { games: 26, goals: 2, assists: 3 },                  titles: ['Mundial de Clubes 2025'] },
+  15: { born: 'Campinas, SP',      foot: 'R', market: '€16M', instagram: 'fabinho',            season: { games: 26, goals: 1, assists: 2 },                  titles: ['UCL 2019', 'Premier League (2×)'] },
+  16: { born: 'Itanhaém, SP',      foot: 'R', market: '€18M', instagram: 'daniluiz2',          season: { games: 24, goals: 5, assists: 4 },                  titles: [] },
+  17: { born: 'São José do Rio Preto, SP', foot: 'R', market: '€20M', instagram: 'g.dsara',    season: { games: 38, goals: 6, assists: 8 },                  titles: ['Süper Lig (2×)'] },
+  18: { born: 'São Gonçalo, RJ',   foot: 'R', market: '€180M', instagram: 'vinijr',            season: { games: 32, goals: 18, assists: 9 },                 titles: ["UCL (3×)", "La Liga (3×)", "Ballon d'Or 2025"] },
+  19: { born: 'Porto Alegre, RS',  foot: 'L', market: '€100M', instagram: 'raphinha',           season: { games: 34, goals: 22, assists: 14 },                titles: ['La Liga (2×)', 'Copa del Rey 2025'] },
+  20: { born: 'Ceilândia, DF',     foot: 'R', market: '€80M', instagram: 'endrick',            season: { games: 18, goals: 8, assists: 2 },                  titles: ['Brasileirão 2022', 'Copa do Brasil 2023'] },
+  21: { born: 'Petrópolis, RJ',    foot: 'L', market: '€65M', instagram: 'cunha',              season: { games: 28, goals: 12, assists: 5 },                 titles: [] },
+  22: { born: 'Guarulhos, SP',     foot: 'R', market: '€75M', instagram: 'gabriel.martinelli', season: { games: 30, goals: 14, assists: 6 },                 titles: [] },
+  23: { born: 'Eunápolis, BA',     foot: 'R', market: '€55M', instagram: 'joaopedro.oficial',  season: { games: 26, goals: 10, assists: 3 },                 titles: [] },
+  24: { born: 'Belém, PA',         foot: 'R', market: '€18M', instagram: 'luizhenrique_07',    season: { games: 24, goals: 6, assists: 4 },                  titles: [] },
+  25: { born: 'Salvador, BA',      foot: 'R', market: '€50M', instagram: 'thiago01',           season: { games: 30, goals: 19, assists: 3 },                 titles: [] },
+  26: { born: 'Rio de Janeiro, RJ', foot: 'R', market: '€25M', instagram: 'rayann',            season: { games: 12, goals: 3, assists: 2 },                  titles: [] },
+}
 
 // square image for squad cards
 export const getPlayerImage = (id) => playerImages[id] ? `/jogadores/${playerImages[id]}` : null

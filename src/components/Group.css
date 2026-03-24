@@ -273,7 +273,7 @@
 
 .qualify-direct .qualify-icon,
 .qualify-direct .qualify-text {
-  color: rgba(0,200,80,0.7);
+  color: rgba(16,184,82,0.75);
 }
 
 .qualify-possible .qualify-icon,
@@ -293,3 +293,22 @@
   .team-flag-img { width: 32px; height: 24px; margin-right: 8px; }
   .match-footer { flex-wrap: wrap; }
 }
+
+
+/* ── light theme overrides ── */
+[data-theme="light"] .group-tbl th          { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .group-tbl tbody tr    { border-bottom-color: rgba(0,0,0,0.05); }
+[data-theme="light"] .group-tbl tbody tr:hover { background: rgba(0,0,0,0.03); }
+[data-theme="light"] .group-tbl td          { color: rgba(0,0,0,0.5); }
+[data-theme="light"] .td-pts                { color: rgba(0,0,0,0.75); }
+[data-theme="light"] .group-tbl th, [data-theme="light"] .group-tbl td { border-bottom-color: rgba(0,0,0,0.05); }
+[data-theme="light"] .match-date            { color: rgba(0,0,0,0.32); }
+[data-theme="light"] .match-tname           { color: rgba(0,0,0,0.8); }
+[data-theme="light"] .match-vs              { color: rgba(0,0,0,0.3); }
+[data-theme="light"] .match-footer          { border-top-color: rgba(0,0,0,0.05); }
+[data-theme="light"] .match-venue           { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .match-time            { color: rgba(0,0,0,0.35); }
+[data-theme="light"] .qualify-confirmed .qualify-icon,
+[data-theme="light"] .qualify-confirmed .qualify-text { color: rgba(0,140,60,0.75); }
+[data-theme="light"] .qualify-possible .qualify-icon,
+[data-theme="light"] .qualify-possible .qualify-text  { color: rgba(0,0,0,0.22); }

@@ -28,14 +28,24 @@ export default function Coach() {
       <p className="section-desc">{c.desc}</p>
 
       <div className="coach-wrap">
-        {/* avatar + name */}
+        {/* portrait photo */}
         <div className="coach-identity glass-card">
-          <div className="coach-avatar">
+          <div className="coach-photo">
             <img src="/ancelotti.jpg" alt={coach.name} className="coach-avatar-img" />
           </div>
-          <div>
+          <div className="coach-name-block">
             <p className="coach-role mono">{coach.club}</p>
             <h3 className="coach-name pixel">{coach.name}</h3>
+            {coach.instagram && (
+              <a
+                href={`https://instagram.com/${coach.instagram}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="coach-instagram mono"
+              >
+                @{coach.instagram}
+              </a>
+            )}
           </div>
         </div>
 

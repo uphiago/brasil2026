@@ -61,25 +61,40 @@ html {
 }
 
 :root {
-  --bg: #000;
+  --bg: #0b0b0b;
   --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.07);
-  --glass-hover: rgba(255, 255, 255, 0.06);
-  --text: #f0f0f0;
-  --text-muted: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-hover: rgba(255, 255, 255, 0.055);
+  --text: #f2f2f2;
+  --text-muted: rgba(255, 255, 255, 0.42);
   --text-faint: rgba(255, 255, 255, 0.2);
+
+  /* theme-aware RGB channels — use as: rgba(var(--rgb-text), 0.5) */
+  --rgb-text: 255, 255, 255;
+  --rgb-bg:   11,  11,  11;
 
   /* Brasil */
   --verde:   #009c3b;
   --amarelo: #FFDF00;
   --azul:    #002776;
 
-  /* aliases compatíveis */
-  --green:  #009c3b;
-  --yellow: #FFDF00;
-  --blue:   #58a6ff;
-  --red:    #f85149;
-  --cyan:   #39d353;
+  /* posição — derivados da paleta Brasil */
+  --clr-gk:  #F5C800;   /* ouro — goleiro          */
+  --clr-def: #5BAFD4;   /* azul celeste — defesa    */
+  --clr-mid: #10B852;   /* verde — meio-campo       */
+  --clr-fwd: #E0624E;   /* terracota — ataque       */
+}
+
+[data-theme="light"] {
+  --bg: #f5f3ee;
+  --glass: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(0, 0, 0, 0.09);
+  --glass-hover: rgba(255, 255, 255, 0.85);
+  --text: #1a1a1a;
+  --text-muted: rgba(0, 0, 0, 0.5);
+  --text-faint: rgba(0, 0, 0, 0.28);
+  --rgb-text: 0, 0, 0;
+  --rgb-bg:   245, 243, 238;
 }
 
 html, body, #root {
@@ -97,7 +112,7 @@ body {
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(var(--rgb-text), 0.08); border-radius: 3px; }
 
 .pixel { font-family: 'GeistPixel', monospace; }
 .mono  { font-family: 'GeistMono', 'Courier New', monospace; }

@@ -64,7 +64,6 @@ export default function Group() {
 
         {/* ── right col: matches ── */}
         <div className="group-matches">
-          <p className="group-matches-title mono">{g.matchesTitle}</p>
           {group.matches.map((m, i) => (
             <div key={i} className="match-card glass-card">
               <div className="match-meta">

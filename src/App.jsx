@@ -34,9 +34,9 @@ export default function App() {
         <NavBar />
         <Hero />
         <Group />
-        <Lineup />
         <Squad />
         <Coach />
+        <Lineup />
         <History />
         <Footer />
       </div>

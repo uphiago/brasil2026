@@ -16,6 +16,15 @@
   to   { opacity: 1; }
 }
 
+@keyframes modalOverlayOut {
+  to { opacity: 0; }
+}
+
+.modal-overlay.exiting {
+  animation: modalOverlayOut 0.22s ease forwards;
+  pointer-events: none;
+}
+
 .modal-content {
   position: relative;
   max-width: 500px;
@@ -23,19 +32,28 @@
   max-height: 90vh;
   overflow-y: auto;
   padding: 0;
-  animation: modalContentIn 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: modalContentIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   /* colored top accent per position */
   border-top: 2px solid transparent;
 }
 
-.modal-content.grp-gk  { border-top-color: rgba(255,223,0,0.5);   }
-.modal-content.grp-def { border-top-color: rgba(88,166,255,0.5);  }
-.modal-content.grp-mid { border-top-color: rgba(0,156,59,0.5);    }
-.modal-content.grp-fwd { border-top-color: rgba(248,81,73,0.5);   }
+.modal-content.exiting {
+  animation: modalContentOut 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.modal-content.grp-gk  { border-top-color: rgba(245,200,0,0.55);   }
+.modal-content.grp-def { border-top-color: rgba(91,175,212,0.55);  }
+.modal-content.grp-mid { border-top-color: rgba(16,184,82,0.55);   }
+.modal-content.grp-fwd { border-top-color: rgba(224,98,78,0.55);   }
 
 @keyframes modalContentIn {
-  from { opacity: 0; transform: translateY(16px) scale(0.97); }
-  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+@keyframes modalContentOut {
+  from { opacity: 1; transform: translateY(0)   scale(1);    }
+  to   { opacity: 0; transform: translateY(12px) scale(0.97); }
 }
 
 /* ── close button ── */
@@ -79,10 +97,10 @@
   background: rgba(255,255,255,0.03);
 }
 
-.modal-image-wrap.grp-gk  { background: rgba(255,223,0,0.07);   }
-.modal-image-wrap.grp-def { background: rgba(88,166,255,0.07);  }
-.modal-image-wrap.grp-mid { background: rgba(0,156,59,0.07);    }
-.modal-image-wrap.grp-fwd { background: rgba(248,81,73,0.07);   }
+.modal-image-wrap.grp-gk  { background: rgba(245,200,0,0.06);   }
+.modal-image-wrap.grp-def { background: rgba(91,175,212,0.06);  }
+.modal-image-wrap.grp-mid { background: rgba(16,184,82,0.06);   }
+.modal-image-wrap.grp-fwd { background: rgba(224,98,78,0.06);   }
 
 .modal-image {
   display: block;
@@ -150,10 +168,10 @@
   border: 1px solid currentColor;
 }
 
-.modal-pos.grp-gk  { color: #FFDF00; background: rgba(255,223,0,0.1);  border-color: rgba(255,223,0,0.35);   }
-.modal-pos.grp-def { color: #58a6ff; background: rgba(88,166,255,0.1); border-color: rgba(88,166,255,0.35);  }
-.modal-pos.grp-mid { color: #2ecc71; background: rgba(0,156,59,0.1);   border-color: rgba(0,156,59,0.35);    }
-.modal-pos.grp-fwd { color: #f85149; background: rgba(248,81,73,0.1);  border-color: rgba(248,81,73,0.35);   }
+.modal-pos.grp-gk  { color: var(--clr-gk);  background: rgba(245,200,0,0.09);   border-color: rgba(245,200,0,0.3);   }
+.modal-pos.grp-def { color: var(--clr-def); background: rgba(91,175,212,0.09);  border-color: rgba(91,175,212,0.3);  }
+.modal-pos.grp-mid { color: var(--clr-mid); background: rgba(16,184,82,0.09);   border-color: rgba(16,184,82,0.3);   }
+.modal-pos.grp-fwd { color: var(--clr-fwd); background: rgba(224,98,78,0.09);   border-color: rgba(224,98,78,0.3);   }
 
 .modal-name {
   font-size: 22px;
@@ -163,6 +181,13 @@
   line-height: 1.1;
 }
 
+.modal-club-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .modal-club {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.35);
@@ -170,6 +195,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.modal-instagram {
+  font-size: 11px;
+  color: rgba(255,255,255,0.28);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.modal-instagram:hover { color: rgba(255,255,255,0.7); }
 
 /* ── body: stats + bio ── */
 .modal-body {
@@ -209,6 +243,117 @@
   letter-spacing: 0.1em;
 }
 
+/* ── season at club ── */
+.modal-season {
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+}
+
+.modal-season-club {
+  display: block;
+  font-size: 9px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 10px;
+}
+
+.modal-season-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.modal-season-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.modal-season-val {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+  line-height: 1;
+  font-family: 'GeistPixel', monospace;
+}
+
+.modal-season-key {
+  font-size: 9px;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── quick details row ── */
+.modal-details-row {
+  display: flex;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.modal-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.02);
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.modal-detail:first-child { border-radius: 8px 0 0 8px; }
+.modal-detail:last-child  { border-right: none; border-radius: 0 8px 8px 0; }
+
+.modal-detail-key {
+  font-size: 8px;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.modal-detail-val {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.2;
+}
+
+/* ── titles ── */
+.modal-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.modal-titles-label {
+  font-size: 9px;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.modal-titles-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.modal-title-tag {
+  font-size: 10px;
+  color: rgba(255,223,0,0.85);
+  background: rgba(255,223,0,0.07);
+  border: 1px solid rgba(255,223,0,0.22);
+  padding: 3px 9px;
+  border-radius: 5px;
+  letter-spacing: 0.04em;
+}
+
 .modal-bio-wrap {
   padding-top: 16px;
   border-top: 1px solid rgba(255,255,255,0.06);
@@ -223,6 +368,11 @@
 
 /* ── mobile ── */
 @media (max-width: 520px) {
+  .modal-image {
+    max-height: 42vh;
+    object-fit: cover;
+    object-position: 50% 8%;
+  }
   .modal-name { font-size: 18px; }
   .modal-identity { padding: 14px 44px 14px 16px; }
   .modal-stats { grid-template-columns: repeat(2, 1fr); gap: 6px; }
@@ -232,4 +382,41 @@
 @media (max-width: 380px) {
   .modal-identity { gap: 4px; }
   .modal-name { font-size: 16px; }
+}
+
+/* ── light theme overrides ── */
+[data-theme="light"] .modal-overlay { background: rgba(0,0,0,0.6); }
+[data-theme="light"] .modal-identity { border-top-color: rgba(0,0,0,0.07); }
+[data-theme="light"] .modal-name     { color: rgba(0,0,0,0.9); }
+[data-theme="light"] .modal-club     { color: rgba(0,0,0,0.4); }
+[data-theme="light"] .modal-instagram { color: rgba(0,0,0,0.3); }
+[data-theme="light"] .modal-instagram:hover { color: rgba(0,0,0,0.7); }
+[data-theme="light"] .modal-stat {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.07);
+}
+[data-theme="light"] .modal-stat-val   { color: rgba(0,0,0,0.85); }
+[data-theme="light"] .modal-stat-label { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .modal-season {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.07);
+}
+[data-theme="light"] .modal-season-club  { color: rgba(0,0,0,0.35); }
+[data-theme="light"] .modal-season-val   { color: rgba(0,0,0,0.85); }
+[data-theme="light"] .modal-season-key   { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .modal-details-row  { border-color: rgba(0,0,0,0.07); }
+[data-theme="light"] .modal-detail       { background: rgba(0,0,0,0.02); border-right-color: rgba(0,0,0,0.07); }
+[data-theme="light"] .modal-detail-key   { color: rgba(0,0,0,0.32); }
+[data-theme="light"] .modal-detail-val   { color: rgba(0,0,0,0.78); }
+[data-theme="light"] .modal-titles-label { color: rgba(0,0,0,0.32); }
+[data-theme="light"] .modal-bio-wrap     { border-top-color: rgba(0,0,0,0.07); }
+[data-theme="light"] .modal-bio          { color: rgba(0,0,0,0.55); }
+[data-theme="light"] .modal-image-initials { color: rgba(0,0,0,0.1); }
+[data-theme="light"] .modal-close {
+  background: rgba(0,0,0,0.07);
+  color: rgba(0,0,0,0.5);
+}
+[data-theme="light"] .modal-close:hover {
+  background: rgba(0,0,0,0.15);
+  color: rgba(0,0,0,0.9);
 }

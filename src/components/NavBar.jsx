@@ -3,7 +3,7 @@ import { useLang } from '../LanguageContext'
 import './NavBar.css'
 
 export default function NavBar() {
-  const { lang, setLang } = useLang()
+  const { lang, setLang, theme, setTheme } = useLang()
   const isPt = lang === 'pt-BR'
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -44,6 +44,14 @@ export default function NavBar() {
         </nav>
 
         <div className="navbar-right">
+          <button
+            className="navbar-theme"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? '○' : '●'}
+          </button>
+
           <button
             className="navbar-lang mono"
             onClick={() => { setLang(isPt ? 'en' : 'pt-BR'); closeMenu() }}

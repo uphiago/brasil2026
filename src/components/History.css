@@ -116,3 +116,10 @@
   .history-star { font-size: 28px; }
   .history-hero-val { font-size: 12px; }
 }
+
+/* ── light theme overrides ── */
+[data-theme="light"] .history-year    { color: rgba(0,0,0,0.85); }
+[data-theme="light"] .history-num     { background: rgba(0,0,0,0.07); }
+[data-theme="light"] .history-label   { color: rgba(0,0,0,0.28); }
+[data-theme="light"] .history-hero-label { color: rgba(0,0,0,0.55); }
+[data-theme="light"] .history-hero-val   { color: rgba(0,0,0,0.82); }

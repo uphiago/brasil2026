@@ -7,14 +7,7 @@ export default function Hero() {
 
   return (
     <div className="hero">
-      <div className="hero-bg">
-        <div className="hero-glow glow-verde" />
-        <div className="hero-glow glow-amarelo" />
-        <div className="hero-glow glow-azul" />
-      </div>
-
-      {/* diagonal flag stripe */}
-      <div className="hero-stripe" />
+      <div className="hero-bg" />
 
       <div className="hero-content">
         <div className="hero-badge-wrap">

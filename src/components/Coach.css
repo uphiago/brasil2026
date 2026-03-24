@@ -1,27 +1,36 @@
 .coach-wrap {
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto auto auto auto;
   gap: 16px;
   align-items: start;
 }
 
-/* identity card */
+/* portrait photo card — spans all right-side rows */
 .coach-identity {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  padding: 28px 32px;
+  grid-column: 1;
+  grid-row: 1 / 4;
+  padding: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  min-width: 200px;
+}
+
+.coach-photo {
+  aspect-ratio: 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+.coach-name-block {
+  padding: 16px 18px;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 /* meta grid */
 .coach-meta-grid {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  grid-column: 2;
+  grid-row: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
@@ -29,47 +38,45 @@
 
 /* stats grid */
 .coach-stats-grid {
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
+  grid-column: 2;
+  grid-row: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-}
-
-.coach-avatar {
-  width: 120px; height: 120px;
-  border-radius: 50%;
-  background: rgba(0,156,59,0.1);
-  border: 1px solid rgba(0,156,59,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 36px;
-  overflow: hidden;
 }
 
 .coach-avatar-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  object-position: 50% 10%;
+  display: block;
 }
 
 .coach-role {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(255,223,0,0.6);
-  margin-bottom: 6px;
-  text-align: center;
+  margin-bottom: 5px;
 }
 
+.coach-instagram {
+  font-size: 11px;
+  color: rgba(255,255,255,0.28);
+  text-decoration: none;
+  transition: color 0.15s;
+  margin-top: 4px;
+  display: block;
+}
+
+.coach-instagram:hover { color: rgba(255,255,255,0.7); }
+
 .coach-name {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
   color: #fff;
-  text-align: center;
   line-height: 1.1;
 }
 
@@ -123,8 +130,17 @@
   color: rgba(255,255,255,0.3);
 }
 
-/* style + titles — full width */
-.coach-style,
+/* style — right column row 3 */
+.coach-style {
+  grid-column: 2;
+  grid-row: 3;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* titles — full width */
 .coach-titles {
   grid-column: 1 / 3;
   padding: 20px 24px;
@@ -159,10 +175,17 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
-  .coach-identity { grid-column: 1; grid-row: auto; flex-direction: row; min-width: unset; }
+  .coach-identity {
+    grid-column: 1; grid-row: auto;
+    flex-direction: row;
+    max-height: 160px;
+  }
+  .coach-photo { min-height: unset; }
+  .coach-name-block { border-top: none; border-left: 1px solid rgba(255,255,255,0.06); }
   .coach-meta-grid { grid-column: 1; grid-row: auto; }
   .coach-stats-grid { grid-column: 1; grid-row: auto; grid-template-columns: repeat(2, 1fr); }
-  .coach-style, .coach-titles { grid-column: 1; grid-row: auto; }
+  .coach-style { grid-column: 1; grid-row: auto; }
+  .coach-titles { grid-column: 1; grid-row: auto; }
 }
 
 @media (max-width: 600px) {
@@ -180,3 +203,15 @@
   .coach-stat-val { font-size: 18px; }
   .coach-stat-item { padding: 12px 10px; }
 }
+
+/* ── light theme overrides ── */
+[data-theme="light"] .coach-name-block { border-top-color: rgba(0,0,0,0.06); }
+[data-theme="light"] .coach-name       { color: #1a1a1a; }
+[data-theme="light"] .coach-meta-label { color: rgba(0,0,0,0.3); }
+[data-theme="light"] .coach-meta-val   { color: rgba(0,0,0,0.72); }
+[data-theme="light"] .coach-stat-val   { color: rgba(0,0,0,0.82); }
+[data-theme="light"] .coach-stat-label { color: rgba(0,0,0,0.32); }
+[data-theme="light"] .coach-style-text { color: rgba(0,0,0,0.55); }
+[data-theme="light"] .coach-titles-text { color: rgba(0,0,0,0.42); }
+[data-theme="light"] .coach-instagram  { color: rgba(0,0,0,0.3); }
+[data-theme="light"] .coach-instagram:hover { color: rgba(0,0,0,0.7); }

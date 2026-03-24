@@ -160,3 +160,23 @@
   .pitch-player-circle { width: 28px; height: 28px; }
   .pitch-player-name { font-size: 8px; max-width: 44px; }
 }
+
+
+/* ── light theme overrides ── */
+[data-theme="light"] .lineup-pitch {
+  background: linear-gradient(
+    180deg,
+    rgba(0,80,20,0.15) 0%,
+    rgba(0,110,30,0.1) 50%,
+    rgba(0,80,20,0.15) 100%
+  );
+  border-color: rgba(0,0,0,0.12);
+}
+[data-theme="light"] .pitch-center-line     { background: rgba(0,0,0,0.1); }
+[data-theme="light"] .pitch-center-circle   { border-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .pitch-penalty-top,
+[data-theme="light"] .pitch-penalty-bot     { border-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .pitch-player-name     { color: rgba(0,0,0,0.75); }
+[data-theme="light"] .pitch-player-num      { color: rgba(0,0,0,0.82); }
+[data-theme="light"] .pitch-player-club     { color: rgba(0,0,0,0.28); }
+[data-theme="light"] .pitch-player-circle   { border-color: rgba(0,0,0,0.12); background: rgba(255,255,255,0.5); }

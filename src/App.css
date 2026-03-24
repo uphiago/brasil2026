@@ -71,22 +71,27 @@ section.visible {
 }
 
 .glass-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
   border-radius: 14px;
   backdrop-filter: blur(12px);
 }
 
 .glass-card:hover {
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.12);
+  background: var(--glass-hover);
+  border-color: rgba(var(--rgb-text), 0.12);
 }
+
+/* light theme adjustments */
+[data-theme="light"] .section-label { color: rgba(0,120,50,0.7); }
+[data-theme="light"] .section-title { color: var(--text); }
+[data-theme="light"] .section-desc  { color: var(--text-muted); }
 
 /* divider between sections */
 .section-divider {
   width: 100%;
   height: 1px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(var(--rgb-text), 0.05);
   margin: 0 40px;
   max-width: 1120px;
   align-self: center;
