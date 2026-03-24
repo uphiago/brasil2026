@@ -72,12 +72,13 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid rgba(var(--rgb-text), 0.15);
+  border: 1px solid rgba(var(--rgb-text), 0.14);
   background: rgba(var(--rgb-text), 0.05);
-  color: rgba(var(--rgb-text), 0.55);
-  font-size: 13px;
+  color: rgba(var(--rgb-text), 0.5);
+  font-size: 15px;
+  line-height: 1;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +87,9 @@
 
 .navbar-theme:hover {
   background: rgba(var(--rgb-text), 0.1);
+  border-color: rgba(var(--rgb-text), 0.28);
   color: rgba(var(--rgb-text), 0.9);
+  transform: rotate(20deg);
 }
 
 .navbar-lang {

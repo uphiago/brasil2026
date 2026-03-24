@@ -2,10 +2,12 @@ import { useLang } from '../LanguageContext'
 import { selecao, getPlayerImage } from '../data/selecao'
 import './Lineup.css'
 
-const roleColor = { gk: '#F5C800', def: '#5BAFD4', dm: '#10B852', am: '#10B852', fwd: '#E0624E' }
+const roleColorDark  = { gk: '#F5C800', def: '#5BAFD4', dm: '#10B852', am: '#10B852', fwd: '#E0624E' }
+const roleColorLight = { gk: '#7a5e00', def: '#2a80a8', dm: '#006e30', am: '#006e30', fwd: '#b84030' }
 
 export default function Lineup() {
-  const { t } = useLang()
+  const { t, theme } = useLang()
+  const roleColor = theme === 'light' ? roleColorLight : roleColorDark
   const l = t.lineup
   const { lineup } = selecao
 

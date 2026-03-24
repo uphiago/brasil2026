@@ -215,3 +215,7 @@
 [data-theme="light"] .coach-titles-text { color: rgba(0,0,0,0.42); }
 [data-theme="light"] .coach-instagram  { color: rgba(0,0,0,0.3); }
 [data-theme="light"] .coach-instagram:hover { color: rgba(0,0,0,0.7); }
+[data-theme="light"] .coach-role            { color: rgba(0,110,45,0.75); }
+[data-theme="light"] .coach-meta-val.highlight { color: #7a5e00; }
+[data-theme="light"] .coach-style-label,
+[data-theme="light"] .coach-titles-label    { color: rgba(0,110,45,0.65); }

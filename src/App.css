@@ -83,8 +83,14 @@ section.visible {
 }
 
 /* light theme adjustments */
-[data-theme="light"] .section-label { color: rgba(0,120,50,0.7); }
+[data-theme="light"] .section-label { color: rgba(0,110,45,0.75); }
 [data-theme="light"] .section-title { color: var(--text); }
+[data-theme="light"] .section-title span {
+  background: linear-gradient(135deg, #006830 0%, rgba(0,100,40,0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 [data-theme="light"] .section-desc  { color: var(--text-muted); }
 
 /* divider between sections */

@@ -211,3 +211,8 @@ section.visible .squad-card {
     rgba(0,0,0,0.03) 100%);
   background-size: 200% 100%;
 }
+[data-theme="light"] .squad-filter.active {
+  background: rgba(0,100,40,0.08);
+  border-color: rgba(0,100,40,0.35);
+  color: #005e25;
+}

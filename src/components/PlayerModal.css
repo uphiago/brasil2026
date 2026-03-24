@@ -385,7 +385,11 @@
 }
 
 /* ── light theme overrides ── */
-[data-theme="light"] .modal-overlay { background: rgba(0,0,0,0.6); }
+[data-theme="light"] .modal-overlay { background: rgba(0,0,0,0.55); }
+[data-theme="light"] .modal-content.grp-gk  { border-top-color: rgba(130,100,0,0.5); }
+[data-theme="light"] .modal-content.grp-def { border-top-color: rgba(42,128,168,0.5); }
+[data-theme="light"] .modal-content.grp-mid { border-top-color: rgba(0,110,48,0.5); }
+[data-theme="light"] .modal-content.grp-fwd { border-top-color: rgba(184,64,48,0.5); }
 [data-theme="light"] .modal-identity { border-top-color: rgba(0,0,0,0.07); }
 [data-theme="light"] .modal-name     { color: rgba(0,0,0,0.9); }
 [data-theme="light"] .modal-club     { color: rgba(0,0,0,0.4); }
@@ -419,4 +423,23 @@
 [data-theme="light"] .modal-close:hover {
   background: rgba(0,0,0,0.15);
   color: rgba(0,0,0,0.9);
+}
+/* fix low-contrast yellows on light bg */
+[data-theme="light"] .modal-starter-badge {
+  color: #7a5e00;
+  background: rgba(130,100,0,0.08);
+  border-color: rgba(130,100,0,0.28);
+}
+[data-theme="light"] .modal-pos.grp-gk  { background: rgba(130,100,0,0.07);  border-color: rgba(130,100,0,0.28); }
+[data-theme="light"] .modal-pos.grp-def { background: rgba(42,128,168,0.07);  border-color: rgba(42,128,168,0.28); }
+[data-theme="light"] .modal-pos.grp-mid { background: rgba(0,110,48,0.07);    border-color: rgba(0,110,48,0.28); }
+[data-theme="light"] .modal-pos.grp-fwd { background: rgba(184,64,48,0.07);   border-color: rgba(184,64,48,0.28); }
+[data-theme="light"] .modal-image-wrap.grp-gk  { background: rgba(130,100,0,0.05); }
+[data-theme="light"] .modal-image-wrap.grp-def { background: rgba(42,128,168,0.05); }
+[data-theme="light"] .modal-image-wrap.grp-mid { background: rgba(0,110,48,0.05); }
+[data-theme="light"] .modal-image-wrap.grp-fwd { background: rgba(184,64,48,0.05); }
+[data-theme="light"] .modal-title-tag {
+  color: rgba(0,80,30,0.85);
+  background: rgba(0,100,40,0.07);
+  border-color: rgba(0,100,40,0.2);
 }

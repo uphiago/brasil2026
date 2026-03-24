@@ -95,6 +95,11 @@ html {
   --text-faint: rgba(0, 0, 0, 0.28);
   --rgb-text: 0, 0, 0;
   --rgb-bg:   245, 243, 238;
+  /* position colors — darkened for readability on light bg */
+  --clr-gk:  #7a5e00;
+  --clr-def: #2a80a8;
+  --clr-mid: #006e30;
+  --clr-fwd: #b84030;
 }
 
 html, body, #root {

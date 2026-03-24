@@ -49,7 +49,7 @@ export default function NavBar() {
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
           >
-            {theme === 'dark' ? '○' : '●'}
+            {theme === 'dark' ? '☀' : '☽'}
           </button>
 
           <button
