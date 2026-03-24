@@ -77,6 +77,23 @@
 .footer-github svg { flex-shrink: 0; opacity: 0.6; transition: opacity 0.2s; }
 .footer-github:hover svg { opacity: 1; }
 
+/* ── light theme overrides ── */
+[data-theme="light"] .footer        { border-top-color: rgba(0,0,0,0.08); color: rgba(0,0,0,0.38); }
+[data-theme="light"] .footer-brand  { color: rgba(0,0,0,0.55); }
+[data-theme="light"] .footer-tagline { color: rgba(0,0,0,0.32); }
+[data-theme="light"] .footer-x,
+[data-theme="light"] .footer-stats,
+[data-theme="light"] .footer-github { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .footer-x:hover,
+[data-theme="light"] .footer-stats:hover,
+[data-theme="light"] .footer-github:hover { color: rgba(0,0,0,0.75); }
+[data-theme="light"] .footer-x svg,
+[data-theme="light"] .footer-stats svg,
+[data-theme="light"] .footer-github svg { opacity: 0.45; }
+[data-theme="light"] .footer-x:hover svg,
+[data-theme="light"] .footer-stats:hover svg,
+[data-theme="light"] .footer-github:hover svg { opacity: 0.8; }
+
 @media (max-width: 600px) {
   .footer {
     flex-direction: column;

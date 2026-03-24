@@ -296,29 +296,25 @@
 
 
 /* ── light theme overrides ── */
-[data-theme="light"] .group-tbl th          { color: rgba(0,0,0,0.38); }
-[data-theme="light"] .group-tbl tbody tr    { border-bottom-color: rgba(0,0,0,0.05); }
+[data-theme="light"] .group-name-badge      { color: rgba(0,110,45,0.75); }
+[data-theme="light"] .group-tbl th          { color: rgba(0,0,0,0.38); border-bottom-color: rgba(0,0,0,0.06); }
+[data-theme="light"] .group-tbl td          { color: rgba(0,0,0,0.5);  border-bottom-color: rgba(0,0,0,0.05); }
 [data-theme="light"] .group-tbl tbody tr:hover { background: rgba(0,0,0,0.03); }
-[data-theme="light"] .group-tbl td          { color: rgba(0,0,0,0.5); }
 [data-theme="light"] .td-pts                { color: rgba(0,0,0,0.75); }
-[data-theme="light"] .group-tbl th, [data-theme="light"] .group-tbl td { border-bottom-color: rgba(0,0,0,0.05); }
-[data-theme="light"] .match-date            { color: rgba(0,0,0,0.32); }
-[data-theme="light"] .match-tname           { color: rgba(0,0,0,0.8); }
-[data-theme="light"] .match-vs              { color: rgba(0,0,0,0.3); }
-[data-theme="light"] .match-footer          { border-top-color: rgba(0,0,0,0.05); }
-[data-theme="light"] .match-venue           { color: rgba(0,0,0,0.38); }
-[data-theme="light"] .match-time            { color: rgba(0,0,0,0.35); }
-[data-theme="light"] .qualify-confirmed .qualify-icon,
-[data-theme="light"] .qualify-confirmed .qualify-text { color: rgba(0,140,60,0.75); }
-[data-theme="light"] .qualify-possible .qualify-icon,
-[data-theme="light"] .qualify-possible .qualify-text  { color: rgba(0,0,0,0.22); }
-[data-theme="light"] .group-name-badge  { color: rgba(0,110,45,0.75); }
-[data-theme="light"] .row-brasil .td-pts { color: #7a5e00; }
-[data-theme="light"] .match-date        { color: rgba(0,110,45,0.75); }
-[data-theme="light"] .match-time-brt     { color: rgba(0,0,0,0.28); }
-[data-theme="light"] .match-stadium      { color: rgba(0,0,0,0.38); }
-[data-theme="light"] .row-brasil td      { background: rgba(0,100,40,0.04); }
+[data-theme="light"] .row-brasil td         { background: rgba(0,100,40,0.04); }
 [data-theme="light"] .row-brasil .team-name { color: rgba(0,0,0,0.9); }
-[data-theme="light"] .history-item:hover { border-color: rgba(0,100,40,0.18); }
-[data-theme="light"] .group-tbl th:first-child,
-[data-theme="light"] .group-tbl td:first-child { border-bottom-color: rgba(0,0,0,0.06); }
+[data-theme="light"] .row-brasil .td-pts    { color: #7a5e00; }
+/* qualify note */
+[data-theme="light"] .qualify-direct  .qualify-icon,
+[data-theme="light"] .qualify-direct  .qualify-text { color: rgba(0,120,45,0.8); }
+[data-theme="light"] .qualify-possible .qualify-icon,
+[data-theme="light"] .qualify-possible .qualify-text { color: rgba(0,0,0,0.48); }
+/* match cards */
+[data-theme="light"] .match-date    { color: rgba(0,110,45,0.75); }
+[data-theme="light"] .match-time    { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .match-time-brt { color: rgba(0,0,0,0.28); }
+[data-theme="light"] .match-tname   { color: rgba(0,0,0,0.8); }
+[data-theme="light"] .match-vs      { color: rgba(0,0,0,0.3); }
+[data-theme="light"] .match-venue   { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .match-stadium { color: rgba(0,0,0,0.38); }
+[data-theme="light"] .match-footer  { border-top-color: rgba(0,0,0,0.05); }

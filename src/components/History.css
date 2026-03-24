@@ -134,4 +134,4 @@
 [data-theme="light"] .history-location-val { color: rgba(0,0,0,0.62); }
 [data-theme="light"] .history-final-val    { color: rgba(0,0,0,0.82); }
 [data-theme="light"] .history-hero-val     { color: rgba(0,100,40,0.85); }
-[data-theme="light"] .history-num          { color: #b8960a; }
+[data-theme="light"] .history-num          { color: #b8960a; background: none; }
